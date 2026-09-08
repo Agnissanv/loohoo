@@ -18,7 +18,7 @@ export const BOUTIQUES = [
     description: 'Thés de soin — livraison à domicile, paiement à la livraison.',
     sousDomaine: 'medithe.looh-oo.com',
     logo: '/boutiques/medithe.png',
-    supabaseUrl: 'À_COMPLETER', // ex: https://xxxxxxxx.supabase.co
+    supabaseUrl: 'https://dyaojtuwmsrizwcwewkh.supabase.co', // ex: https://xxxxxxxx.supabase.co
     supabaseAnonKey: 'À_COMPLETER',
   },
 ];
