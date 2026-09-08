@@ -20,8 +20,8 @@ export default function Footer() {
           <div style={styles.contact}>
             <h4 style={styles.titreColonne}>Ouvrir votre boutique avec LOOHOO</h4>
             <p style={styles.texte}>
-              Vous vendez des produits spécialisés et voulez votre propre boutique chez
-              LOOHOO ? Contactez-nous :
+              Vous vendez des produits spécialisés et voulez votre propre boutique sur un
+              sous-domaine LOOHOO ? Contactez-nous :
             </p>
             {/* TODO : remplacer par la vraie adresse e-mail / numéro de contact LOOHOO */}
             <a href="mailto:contact@looh-oo.com" className="btn btn-clair" style={{ marginTop: '0.8rem' }}>
@@ -31,12 +31,16 @@ export default function Footer() {
         </div>
 
         <div className="container" style={styles.copyright}>
-          © {new Date().getFullYear()} LOOHOO — Tous droits réservés
-            <div className="container" style={styles.copyright}>
-              Créé par <a href="https://www.agnissanisaac.com/" target="_blank" rel="noopener noreferrer">Code A-Z</a>
-          </div>
+          <span>© {new Date().getFullYear()} LOOHOO — Tous droits réservés</span>
+          <a
+            href="https://www.agnissanisaac.com/"
+            target="_blank"
+            rel="noreferrer"
+            style={styles.credit}
+          >
+            Créé par Code A-Z
+          </a>
         </div>
-        
       </div>
     </footer>
   );
@@ -53,6 +57,10 @@ const styles = {
   texte: { opacity: 0.75, fontSize: '0.9rem', margin: 0 },
   copyright: {
     borderTop: '1px solid rgba(255,248,239,0.15)', padding: '1.2rem 1.5rem',
-    fontSize: '0.78rem', opacity: 0.6, textAlign: 'center', fontFamily: 'var(--police-etiquette)',
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap',
+    fontSize: '0.78rem', opacity: 0.6, fontFamily: 'var(--police-etiquette)',
+  },
+  credit: {
+    color: 'inherit', opacity: 0.85, textDecoration: 'none', borderBottom: '1px solid rgba(255,248,239,0.35)',
   },
 };
