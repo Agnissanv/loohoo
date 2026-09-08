@@ -21,9 +21,9 @@ const PILIERS = [
 
 export default function Mission() {
   return (
-    <section className="section" style={{ background: 'var(--loo-white)' }}>
+    <section className="section">
       <div className="container">
-        <span className="eyebrow">Qui est LOOHOO</span>
+        <span className="etiquette">Qui est LOOHOO</span>
         <h2 className="section-titre">Une marque, plusieurs boutiques.</h2>
         <p className="section-intro">
           LOOHOO ne vend rien directement — c'est la marque qui réunit et fait grandir des
@@ -32,12 +32,12 @@ export default function Mission() {
 
         <div className="loo-mission-grille" style={styles.grille}>
           {PILIERS.map((p) => (
-            <div key={p.titre} className="carte">
+            <div key={p.titre} className="carte" style={styles.carte}>
               <div style={styles.icone}>
-                <p.icon size={22} color="var(--loo-white)" />
+                <p.icon size={20} color="var(--loo-encre)" />
               </div>
-              <h3 style={{ fontSize: '1.1rem', margin: '1rem 0 0.5rem' }}>{p.titre}</h3>
-              <p style={{ fontSize: '0.92rem', opacity: 0.75, margin: 0 }}>{p.texte}</p>
+              <h3 style={{ fontSize: '1.08rem', margin: '1rem 0 0.5rem' }}>{p.titre}</h3>
+              <p style={{ fontSize: '0.92rem', opacity: 0.72, margin: 0 }}>{p.texte}</p>
             </div>
           ))}
         </div>
@@ -47,9 +47,10 @@ export default function Mission() {
 }
 
 const styles = {
-  grille: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '2.5rem' },
+  grille: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.4rem', marginTop: '2.5rem' },
+  carte: { padding: '1.7rem' },
   icone: {
-    width: '44px', height: '44px', borderRadius: '12px', background: 'var(--gradient-marque)',
+    width: '40px', height: '40px', borderRadius: '4px 12px 4px 12px', background: 'var(--loo-papier-ombre)',
     display: 'flex', alignItems: 'center', justifyContent: 'center',
   },
 };

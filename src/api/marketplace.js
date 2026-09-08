@@ -18,27 +18,32 @@ async function recupererProduitsBoutique(boutique) {
     });
     if (!reponse.ok) throw new Error(`Erreur ${reponse.status}`);
     const produits = await reponse.json();
-    return produits.map((p) => ({
-      id: p.id,
-      nom: p.nom,
-      prix: Number(p.prix),
-      prixBarre: p.prix_barre ? Number(p.prix_barre) : null,
-      categorie: p.categorie,
-      stock: p.stock,
-      image: p.images?.[0] || null,
-      dateAjout: p.date_ajout,
-      boutique: { id: boutique.id, nom: boutique.nom, sousDomaine: boutique.sousDomaine },
-    }));
+    return produits
+      .filter((p) => p.stock > 0)
+      .map((p) => ({
+        id: p.id,
+        nom: p.nom,
+        prix: Number(p.prix),
+        prixBarre: p.prix_barre ? Number(p.prix_barre) : null,
+        categorie: p.categorie,
+        stock: p.stock,
+        image: p.images?.[0] || null,
+      }));
   } catch {
     // Une boutique injoignable ne doit jamais casser l'affichage des autres.
     return [];
   }
 }
 
+// Renvoie un "étal" par boutique — pas une liste unique mélangée — pour que la
+// marketplace reste fidèle à ce qu'elle est vraiment : plusieurs boutiques
+// indépendantes exposées côte à côte, pas un catalogue unique.
 export async function recupererMarketplace() {
-  const resultats = await Promise.all(BOUTIQUES.map(recupererProduitsBoutique));
-  return resultats
-    .flat()
-    .filter((p) => p.stock > 0)
-    .sort((a, b) => new Date(b.dateAjout) - new Date(a.dateAjout));
+  const boutiquesAvecProduits = await Promise.all(
+    BOUTIQUES.map(async (boutique) => ({
+      boutique: { id: boutique.id, nom: boutique.nom, sousDomaine: boutique.sousDomaine },
+      produits: await recupererProduitsBoutique(boutique),
+    }))
+  );
+  return boutiquesAvecProduits.filter((etal) => etal.produits.length > 0);
 }
