@@ -20,8 +20,8 @@ export default function Footer() {
           <div style={styles.contact}>
             <h4 style={styles.titreColonne}>Ouvrir votre boutique avec LOOHOO</h4>
             <p style={styles.texte}>
-              Vous vendez des produits spécialisés et voulez votre propre boutique sur un
-              sous-domaine LOOHOO ? Contactez-nous :
+              Vous vendez des produits spécialisés et voulez votre propre boutique chez
+              LOOHOO ? Contactez-nous :
             </p>
             {/* TODO : remplacer par la vraie adresse e-mail / numéro de contact LOOHOO */}
             <a href="mailto:contact@looh-oo.com" className="btn btn-clair" style={{ marginTop: '0.8rem' }}>
@@ -32,7 +32,11 @@ export default function Footer() {
 
         <div className="container" style={styles.copyright}>
           © {new Date().getFullYear()} LOOHOO — Tous droits réservés
+            <div className="container" style={styles.copyright}>
+              Créé par <a href="https://www.agnissanisaac.com/" target="_blank" rel="noopener noreferrer">Code A-Z</a>
+          </div>
         </div>
+        
       </div>
     </footer>
   );
