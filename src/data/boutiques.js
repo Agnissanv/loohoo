@@ -19,6 +19,6 @@ export const BOUTIQUES = [
     sousDomaine: 'medithe.looh-oo.com',
     logo: '/boutiques/medithe.png',
     supabaseUrl: 'https://dyaojtuwmsrizwcwewkh.supabase.co', // ex: https://xxxxxxxx.supabase.co
-    supabaseAnonKey: 'À_COMPLETER',
+    supabaseAnonKey: 'sb_publishable_5co3ZBHTfaKTl6mJV2dclg_oVWAqsKA', // ex: sb_publishable_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   },
 ];
