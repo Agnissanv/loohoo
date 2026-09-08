@@ -1,0 +1,131 @@
+:root {
+  --loo-orange: #F7941D;
+  --loo-orange-deep: #F26B21;
+  --loo-red: #EF4136;
+  --loo-ink: #1E1712;
+  --loo-cream: #FFF9F3;
+  --loo-cream-dark: #FDEEDA;
+  --loo-line: #F3DFC5;
+  --loo-white: #FFFFFF;
+  --loo-black: #111111;
+  --gradient-marque: linear-gradient(100deg, var(--loo-orange) 0%, var(--loo-red) 100%);
+  --font-display: 'Baloo 2', 'Segoe UI', sans-serif;
+  --font-body: 'Work Sans', -apple-system, sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: var(--loo-cream);
+  color: var(--loo-ink);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--loo-ink);
+}
+
+p { line-height: 1.6; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--loo-red);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.6em;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--gradient-marque);
+  color: var(--loo-white);
+  box-shadow: 0 8px 20px rgba(239, 65, 54, 0.28);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--loo-ink);
+  border: 2px solid var(--loo-ink);
+}
+
+.btn-blanc {
+  background: var(--loo-white);
+  color: var(--loo-red);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-titre {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0.4rem 0 1rem;
+}
+
+.section-intro {
+  max-width: 640px;
+  opacity: 0.8;
+  font-size: 1.05rem;
+}
+
+.carte {
+  background: var(--loo-white);
+  border: 1px solid var(--loo-line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+}
+
+@media (max-width: 640px) {
+  .loo-nav a:not(.btn) { display: none; }
+  .loo-nav { gap: 0.8rem; }
+}
+
+@media (max-width: 860px) {
+  .loo-hero-grille { grid-template-columns: 1fr !important; text-align: center; }
+  .loo-hero-grille > div:first-child { display: flex; flex-direction: column; align-items: center; }
+  .loo-mission-grille { grid-template-columns: 1fr !important; }
+}
+
+/* ---- squelette de chargement (marketplace) ---- */
+@keyframes loo-pulse {
+  0% { opacity: 0.55; }
+  50% { opacity: 1; }
+  100% { opacity: 0.55; }
+}
+.loo-squelette {
+  background: var(--loo-cream-dark);
+  border-radius: var(--radius-sm);
+  animation: loo-pulse 1.4s ease-in-out infinite;
+}
