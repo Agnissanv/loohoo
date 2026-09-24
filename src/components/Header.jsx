@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header style={styles.header}>
       <div className="container" style={styles.barre}>
-        <a href="#accueil" style={styles.logoLigne}>
+        <Link to="/" style={styles.logoLigne}>
           <img src="/logo.jpeg" alt="LOOHOO" style={styles.logo} width="38" height="38" />
           <span style={styles.logoTexte}>LOOHOO</span>
-        </a>
+        </Link>
 
         <nav className="loo-nav" style={styles.nav}>
-          <a href="#boutiques" style={styles.lien}>Nos boutiques</a>
-          <a href="#marketplace" style={styles.lien}>Marketplace</a>
-          <a href="#partenaire" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem' }}>
+          <Link to="/#boutiques" style={styles.lien}>Nos boutiques</Link>
+          <Link to="/#marketplace" style={styles.lien}>Marketplace</Link>
+          <Link to="/#partenaire" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem' }}>
             Ouvrir ma boutique
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
