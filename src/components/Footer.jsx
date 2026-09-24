@@ -31,24 +31,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="container" style={styles.copyright}>
+                <div className="container" style={styles.copyright}>
           <span>© {new Date().getFullYear()} LOOHOO — Tous droits réservés</span>
           <nav style={styles.liensLegaux} aria-label="Informations légales">
             <Link to="/mentions-legales" style={styles.lienLegal}>Mentions légales</Link>
             <Link to="/confidentialite" style={styles.lienLegal}>Confidentialité</Link>
             <Link to="/conditions" style={styles.lienLegal}>Conditions d'utilisation</Link>
           </nav>
-          
-            href="https://www.agnissanisaac.com/"
-            target="_blank"
-            rel="noreferrer"
-            style={styles.credit}
-          >
-            Créé par Code A-Z
-          </a>
+          <a href="https://www.agnissanisaac.com/" target="_blank" rel="noreferrer" style={styles.credit}>Créé par Code A-Z</a>
         </div>
       </div>
-    </footer>
+    </footer>   
   );
 }
 
