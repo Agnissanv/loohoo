@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MarqueVisage from './MarqueVisage.jsx';
 import SourireDiviseur from './SourireDiviseur.jsx';
 
@@ -32,7 +33,12 @@ export default function Footer() {
 
         <div className="container" style={styles.copyright}>
           <span>© {new Date().getFullYear()} LOOHOO — Tous droits réservés</span>
-          <a
+          <nav style={styles.liensLegaux} aria-label="Informations légales">
+            <Link to="/mentions-legales" style={styles.lienLegal}>Mentions légales</Link>
+            <Link to="/confidentialite" style={styles.lienLegal}>Confidentialité</Link>
+            <Link to="/conditions" style={styles.lienLegal}>Conditions d'utilisation</Link>
+          </nav>
+          
             href="https://www.agnissanisaac.com/"
             target="_blank"
             rel="noreferrer"
@@ -60,6 +66,8 @@ const styles = {
     display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap',
     fontSize: '0.78rem', opacity: 0.6, fontFamily: 'var(--police-etiquette)',
   },
+  liensLegaux: { display: 'flex', gap: '1.2rem', flexWrap: 'wrap' },
+  lienLegal: { color: 'inherit', textDecoration: 'none', borderBottom: '1px solid rgba(255,248,239,0.25)' },
   credit: {
     color: 'inherit', opacity: 0.85, textDecoration: 'none', borderBottom: '1px solid rgba(255,248,239,0.35)',
   },

@@ -3,6 +3,9 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Accueil from './pages/Accueil.jsx';
+import MentionsLegales from './pages/MentionsLegales.jsx';
+import Confidentialite from './pages/Confidentialite.jsx';
+import Conditions from './pages/Conditions.jsx';
 
 function GestionDuScroll() {
   const { pathname, hash, key } = useLocation();
@@ -43,6 +46,9 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Accueil />} />
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/confidentialite" element={<Confidentialite />} />
+        <Route path="/conditions" element={<Conditions />} />
         <Route path="*" element={<Introuvable />} />
       </Routes>
       <Footer />
