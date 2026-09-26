@@ -1,23 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import ModaleBientotDisponible from './ModaleBientotDisponible.jsx';
 
 export default function Header() {
+  const [modaleOuverte, setModaleOuverte] = useState(false);
+
   return (
     <header style={styles.header}>
       <div className="container" style={styles.barre}>
-        <Link to="/" style={styles.logoLigne}>
+        <a href="#accueil" style={styles.logoLigne}>
           <img src="/logo.jpeg" alt="LOOHOO" style={styles.logo} width="38" height="38" />
           <span style={styles.logoTexte}>LOOHOO</span>
-        </Link>
+        </a>
 
         <nav className="loo-nav" style={styles.nav}>
-          <Link to="/#boutiques" style={styles.lien}>Nos boutiques</Link>
-          <Link to="/#marketplace" style={styles.lien}>Marketplace</Link>
-          <Link to="/#partenaire" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem' }}>
-            Ouvrir ma boutique
-          </Link>
+          <a href="#boutiques" style={styles.lien}>Nos boutiques</a>
+          <a href="#marketplace" style={styles.lien}>Marketplace</a>
+          <a href="https://loohoo-fournisseurs.vercel.app/" style={styles.lien}>Trouver un fournisseur</a>
+          <button type="button" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }} onClick={() => setModaleOuverte(true)}>
+            Vendre en ligne
+          </button>
         </nav>
       </div>
+
+      {modaleOuverte && (
+        <ModaleBientotDisponible
+          titre="Créez votre boutique en ligne"
+          description="La création de boutique en libre-service arrive bientôt sur LOOHOO. Laissez votre e-mail pour être averti dès l'ouverture."
+          source="landing-vendeurs"
+          onClose={() => setModaleOuverte(false)}
+        />
+      )}
     </header>
   );
 }
@@ -31,6 +43,6 @@ const styles = {
   logoLigne: { display: 'flex', alignItems: 'center', gap: '0.6rem' },
   logo: { borderRadius: '8px 8px 8px 2px' },
   logoTexte: { fontFamily: 'var(--police-affiche)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--loo-encre)' },
-  nav: { display: 'flex', alignItems: 'center', gap: '1.8rem' },
+  nav: { display: 'flex', alignItems: 'center', gap: '1.5rem' },
   lien: { fontWeight: 600, fontSize: '0.9rem', color: 'var(--loo-encre)' },
 };

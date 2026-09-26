@@ -21,8 +21,9 @@ export default function Confidentialite() {
       <h2>2. Les données que nous traitons</h2>
       <ul>
         <li>
-          <strong>Aucun formulaire, aucun compte.</strong> Le site ne vous demande ni nom, ni
-          téléphone, ni adresse e-mail, et ne propose pas de création de compte.
+          <strong>Liste d'attente.</strong> Si vous laissez votre e-mail pour être averti d'une
+          fonctionnalité pas encore disponible (par exemple « Vendre en ligne »), nous conservons cette
+          adresse uniquement pour vous prévenir de son ouverture.
         </li>
         <li>
           <strong>Données techniques de navigation.</strong> Comme pour tout site web, votre adresse IP
