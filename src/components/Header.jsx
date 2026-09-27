@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import ModaleBientotDisponible from './ModaleBientotDisponible.jsx';
+import React from 'react';
 
-export default function Header() {
-  const [modaleOuverte, setModaleOuverte] = useState(false);
-
+export default function Header({ onOuvrirBientotDisponible }) {
   return (
     <header style={styles.header}>
       <div className="container" style={styles.barre}>
@@ -15,21 +12,12 @@ export default function Header() {
         <nav className="loo-nav" style={styles.nav}>
           <a href="#boutiques" style={styles.lien}>Nos boutiques</a>
           <a href="#marketplace" style={styles.lien}>Marketplace</a>
-          <a href="https://loohoo-fournisseurs.vercel.app/" style={styles.lien}>Trouver un fournisseur</a>
-          <button type="button" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }} onClick={() => setModaleOuverte(true)}>
+          <a href="https://fournisseurs.looh-oo.com" style={styles.lien}>Trouver un fournisseur</a>
+          <button type="button" className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }} onClick={onOuvrirBientotDisponible}>
             Vendre en ligne
           </button>
         </nav>
       </div>
-
-      {modaleOuverte && (
-        <ModaleBientotDisponible
-          titre="Créez votre boutique en ligne"
-          description="La création de boutique en libre-service arrive bientôt sur LOOHOO. Laissez votre e-mail pour être averti dès l'ouverture."
-          source="landing-vendeurs"
-          onClose={() => setModaleOuverte(false)}
-        />
-      )}
     </header>
   );
 }
