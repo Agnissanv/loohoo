@@ -21,8 +21,8 @@ export default function Hero() {
             </p>
             <div style={styles.boutons}>
               <a href="#boutiques" className="btn btn-clair">Découvrir nos boutiques</a>
-              <a href="#marketplace" className="btn btn-outline" style={{ color: 'var(--loo-papier)' }}>
-                Explorer la marketplace
+              <a href="https://fournisseurs.looh-oo.com" className="btn btn-outline" style={{ color: 'var(--loo-papier)' }}>
+                Trouver un fournisseur
               </a>
             </div>
           </div>

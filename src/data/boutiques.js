@@ -1,7 +1,7 @@
 // Registre des boutiques membres de LOOHOO.
 // Chaque boutique reste un projet totalement indépendant (son propre code, son propre
 // Supabase, son propre déploiement Vercel) — cette liste ne fait qu'agréger l'affichage
-// de leurs produits publics ici, sur la marketplace LOOHOO.
+// de leurs produits publics ici, sur la vitrine LOOHOO (section « Nos boutiques »).
 //
 // Pour ajouter une nouvelle boutique : ajoute une entrée ici avec son URL Supabase et sa
 // clé publique (publishable/anon key — la même que celle déjà utilisée côté client sur

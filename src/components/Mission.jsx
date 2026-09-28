@@ -24,10 +24,10 @@ export default function Mission() {
     <section className="section">
       <div className="container">
         <span className="etiquette">Qui est LOOHOO</span>
-        <h2 className="section-titre">Une marque, plusieurs boutiques.</h2>
+        <h2 className="section-titre">Une marque, un écosystème.</h2>
         <p className="section-intro">
-          LOOHOO ne vend rien directement — c'est la marque qui réunit et fait grandir des
-          boutiques spécialisées, chacune gardant son indépendance et son savoir-faire.
+          LOOHOO ne vend rien directement — c'est la marque qui réunit fournisseurs, vendeurs et
+          boutiques spécialisées, chacun gardant son indépendance et son savoir-faire.
         </p>
 
         <div className="loo-mission-grille" style={styles.grille}>

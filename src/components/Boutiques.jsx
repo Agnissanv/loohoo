@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, Plus } from 'lucide-react';
 import { BOUTIQUES } from '../data/boutiques.js';
+import { recupererBoutiquesVedette } from '../api/boutiques.js';
 
-export default function Boutiques() {
-  const [vedette, ...autres] = BOUTIQUES;
+const LIMITE = 6;
+
+const urlBoutique = (b) => 'https://' + b.sousDomaine;
+
+export default function Boutiques({ onOuvrirBientotDisponible }) {
+  // Affichage immédiat dans l'ordre du registre, puis reclassement dès que les chiffres publics sont lus
+  const [liste, setListe] = useState(() => BOUTIQUES.slice(0, LIMITE));
+
+  useEffect(() => {
+    recupererBoutiquesVedette(LIMITE).then(setListe);
+  }, []);
+
+  const vedette = liste[0];
+  const autres = liste.slice(1);
 
   return (
     <section id="boutiques" className="section" style={{ background: 'var(--loo-blanc)' }}>
@@ -14,13 +27,7 @@ export default function Boutiques() {
 
         <div className="loo-boutiques-grille" style={styles.grille}>
           {vedette && (
-            <a
-              href={`https://${vedette.sousDomaine}`}
-              target="_blank"
-              rel="noreferrer"
-              className="carte carte-vedette"
-              style={styles.carteVedette}
-            >
+            <a href={urlBoutique(vedette)} target="_blank" rel="noreferrer" className="carte carte-vedette" style={styles.carteVedette}>
               <div>
                 <span className="etiquette" style={{ color: 'var(--loo-encre)', opacity: 0.55 }}>Boutique phare</span>
                 <h3 style={{ fontSize: '1.5rem', margin: '0.4rem 0 0.6rem' }}>{vedette.nom}</h3>
@@ -33,7 +40,7 @@ export default function Boutiques() {
           )}
 
           {autres.map((b) => (
-            <a key={b.id} href={`https://${b.sousDomaine}`} target="_blank" rel="noreferrer" className="carte" style={styles.carteBoutique}>
+            <a key={b.id} href={urlBoutique(b)} target="_blank" rel="noreferrer" className="carte" style={styles.carteBoutique}>
               <div>
                 <h3 style={{ fontSize: '1.15rem', marginBottom: '0.4rem' }}>{b.nom}</h3>
                 <p style={{ fontSize: '0.9rem', opacity: 0.75, margin: 0 }}>{b.description}</p>
@@ -50,9 +57,9 @@ export default function Boutiques() {
             <p style={{ fontSize: '0.86rem', opacity: 0.68, margin: '0 0 1rem' }}>
               Ouvrez votre boutique en ligne sous LOOHOO, sur votre propre sous-domaine.
             </p>
-            <a href="#partenaire" className="btn btn-outline" style={{ fontSize: '0.83rem', padding: '0.55em 1.1em' }}>
-              En savoir plus
-            </a>
+            <button type="button" className="btn btn-outline" onClick={onOuvrirBientotDisponible} style={{ fontSize: '0.83rem', padding: '0.55em 1.1em' }}>
+              Être prévenu
+            </button>
           </div>
         </div>
       </div>

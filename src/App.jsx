@@ -50,7 +50,7 @@ export default function App() {
       <Header onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
 
       <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/" element={<Accueil onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/conditions" element={<Conditions />} />

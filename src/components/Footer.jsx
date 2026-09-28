@@ -6,7 +6,7 @@ import SourireDiviseur from './SourireDiviseur.jsx';
 export default function Footer() {
   return (
     <footer id="partenaire">
-      <SourireDiviseur fond="var(--loo-papier)" suivant="var(--loo-encre)" />
+      <SourireDiviseur fond="var(--loo-blanc)" suivant="var(--loo-encre)" />
 
       <div style={styles.footer}>
         <div className="container" style={styles.contenu}>
@@ -18,20 +18,31 @@ export default function Footer() {
             <p style={styles.slogan}>Les produits rares au meilleur prix.</p>
           </div>
 
-          <div style={styles.contact}>
+          <div style={styles.colonne}>
             <h4 style={styles.titreColonne}>Ouvrir votre boutique avec LOOHOO</h4>
             <p style={styles.texte}>
               Vous vendez des produits spécialisés et voulez votre propre boutique sur un
               sous-domaine LOOHOO ? Contactez-nous :
             </p>
-            {/* TODO : remplacer par la vraie adresse e-mail / numéro de contact LOOHOO */}
+            {/* TODO : confirmer avec le client que cette adresse e-mail existe bien */}
             <a href="mailto:contact@looh-oo.com" className="btn btn-clair" style={{ marginTop: '0.8rem' }}>
               contact@looh-oo.com
             </a>
           </div>
+
+          <div style={styles.colonne}>
+            <h4 style={styles.titreColonne}>Vous êtes fournisseur ?</h4>
+            <p style={styles.texte}>
+              Créez votre compte pour présenter votre catalogue aux vendeurs. Chaque profil est vérifié
+              par notre équipe avant publication.
+            </p>
+            <a href="https://fournisseurs.looh-oo.com/inscription" className="btn btn-outline" style={{ marginTop: '0.8rem' }}>
+              Créer mon compte fournisseur
+            </a>
+          </div>
         </div>
 
-                <div className="container" style={styles.copyright}>
+        <div className="container" style={styles.copyright}>
           <span>© {new Date().getFullYear()} LOOHOO — Tous droits réservés</span>
           <nav style={styles.liensLegaux} aria-label="Informations légales">
             <Link to="/mentions-legales" style={styles.lienLegal}>Mentions légales</Link>
@@ -41,7 +52,7 @@ export default function Footer() {
           <a href="https://www.agnissanisaac.com/" target="_blank" rel="noreferrer" style={styles.credit}>Créé par Code A-Z</a>
         </div>
       </div>
-    </footer>   
+    </footer>
   );
 }
 
@@ -51,8 +62,8 @@ const styles = {
   logoLigne: { display: 'flex', alignItems: 'center', gap: '0.6rem' },
   logoTexte: { fontFamily: 'var(--police-affiche)', fontWeight: 700, fontSize: '1.25rem' },
   slogan: { opacity: 0.75, marginTop: '0.6rem', maxWidth: '280px' },
-  contact: { maxWidth: '360px' },
-  titreColonne: { fontSize: '0.95rem', marginBottom: '0.6rem', fontWeight: 600 },
+  colonne: { maxWidth: '320px' },
+  titreColonne: { fontSize: '0.95rem', marginBottom: '0.6rem', fontWeight: 600, color: 'var(--loo-papier)' },
   texte: { opacity: 0.75, fontSize: '0.9rem', margin: 0 },
   copyright: {
     borderTop: '1px solid rgba(255,248,239,0.15)', padding: '1.2rem 1.5rem',
