@@ -7,8 +7,9 @@ export default function Confidentialite() {
     <PageLegale titre="Politique de confidentialité" dateMaj="24 septembre 2026">
       <p>
         Cette politique explique quelles données personnelles sont traitées lorsque vous visitez
-        looh-oo.com, et comment vous pouvez exercer vos droits. Elle est volontairement courte : à ce
-        jour, le site est une vitrine et ne vous demande aucune information personnelle.
+        looh-oo.com, et comment vous pouvez exercer vos droits. Elle est volontairement courte : ce site
+        ne vous demande une information personnelle que si vous laissez votre e-mail pour être prévenu
+        d'une fonctionnalité à venir.
       </p>
 
       <h2>1. Responsable du traitement</h2>
@@ -49,7 +50,7 @@ export default function Confidentialite() {
         <li><strong>Vercel</strong> : hébergement du site.</li>
         <li><strong>Google Fonts</strong> : chargement des polices de caractères (votre adresse IP est transmise à Google à cette occasion).</li>
         <li><strong>Cloudinary</strong> : diffusion des images des produits.</li>
-        <li><strong>Supabase</strong> : base de données publique des boutiques, interrogée pour afficher leurs produits sur la marketplace.</li>
+        <li><strong>Supabase</strong> : base de données publique interrogée pour afficher les produits des boutiques et la liste des fournisseurs vérifiés, et pour enregistrer votre e-mail si vous rejoignez une liste d'attente.</li>
       </ul>
       <p>
         Ces prestataires peuvent être situés hors de Côte d'Ivoire ; vos données techniques peuvent donc

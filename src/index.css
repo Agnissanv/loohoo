@@ -153,9 +153,20 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---- responsive ---- */
+.loo-nav { display: flex; align-items: center; gap: 1.5rem; }
+.loo-nav-bouton-mobile { display: none; background: none; border: 0; cursor: pointer; color: var(--loo-encre); padding: 0.4rem; }
+
 @media (max-width: 640px) {
-  .loo-nav a:not(.btn) { display: none; }
-  .loo-nav { gap: 0.7rem; }
+  .loo-nav-bouton-mobile { display: flex; }
+  .loo-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--loo-papier); border-bottom: 1px solid var(--loo-papier-ombre);
+    flex-direction: column; align-items: stretch; gap: 0; padding: 0.5rem 1.5rem 1rem;
+    display: none;
+  }
+  .loo-nav-ouvert { display: flex !important; }
+  .loo-nav a:not(.btn) { display: block; padding: 0.7rem 0; border-bottom: 1px solid var(--loo-papier-ombre); }
+  .loo-nav .btn { margin-top: 0.8rem; justify-content: center; width: 100%; }
   .section { padding: 3.5rem 0; }
 }
 

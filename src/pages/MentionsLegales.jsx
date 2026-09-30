@@ -42,17 +42,17 @@ export default function MentionsLegales() {
       <p>
         Le nom LOOHOO, le logo, les visuels et les textes de ce site sont la propriété de LOOHOO. Toute
         reproduction, représentation ou réutilisation, totale ou partielle, sans autorisation écrite
-        préalable est interdite. Les noms, images et descriptions des produits présentés sur la
-        marketplace appartiennent aux boutiques qui les publient.
+        préalable est interdite. Les noms, images et descriptions des boutiques et des fournisseurs
+        présentés sur ce site appartiennent à ceux qui les publient.
       </p>
 
       <h2>Responsabilité</h2>
       <p>
         LOOHOO s'efforce de fournir des informations exactes et à jour, sans pouvoir garantir l'absence
-        d'erreur ou d'interruption du site. Les produits, prix et disponibilités affichés sur la
-        marketplace sont fournis par les boutiques ; chaque boutique reste responsable de ses offres, de
-        ses ventes et de ses livraisons. Ce site contient des liens vers des sites tiers (dont les
-        boutiques) sur lesquels LOOHOO n'exerce aucun contrôle.
+        d'erreur ou d'interruption du site. Les informations affichées sur les boutiques et les
+        fournisseurs sont fournies par ceux-ci ; chacun reste responsable de ses offres, de ses ventes
+        et de ses livraisons. Ce site contient des liens vers des sites tiers (dont les boutiques et la
+        plateforme fournisseurs) sur lesquels LOOHOO n'exerce aucun contrôle.
       </p>
 
       <h2>Données personnelles</h2>

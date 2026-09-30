@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { X, Mail } from 'lucide-react';
 import { supabase } from '../supabaseClient.js';
 
@@ -47,6 +48,12 @@ export default function ModaleBientotDisponible({ titre, description, source, on
             <button type="submit" className="btn btn-primary" disabled={envoi} style={{ width: '100%', justifyContent: 'center', marginTop: '1rem' }}>
               {envoi ? 'Envoi…' : 'Me prévenir'}
             </button>
+            <p style={{ fontSize: '0.76rem', opacity: 0.65, lineHeight: 1.5, margin: '0.9rem 0 0' }}>
+              En laissant votre e-mail, vous acceptez d'être recontacté à ce sujet. Voir la{' '}
+              <Link to="/confidentialite" onClick={onClose} style={{ textDecoration: 'underline' }}>
+                politique de confidentialité
+              </Link>.
+            </p>
           </form>
         )}
       </div>

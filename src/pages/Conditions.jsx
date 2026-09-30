@@ -12,8 +12,9 @@ export default function Conditions() {
 
       <h2>1. Objet du site</h2>
       <p>
-        LOOHOO est une marque qui réunit des boutiques en ligne spécialisées. Ce site présente la marque
-        et ses boutiques, et affiche un aperçu de leurs produits sur une marketplace.
+        LOOHOO est une marque qui connecte fournisseurs, vendeurs et boutiques en ligne spécialisées. Ce
+        site présente l'entreprise, met en avant ses boutiques et ses fournisseurs vérifiés, et oriente
+        vers la plateforme de sourcing fournisseurs et vers les boutiques elles-mêmes.
       </p>
 
       <h2>2. LOOHOO ne vend pas directement</h2>
@@ -33,9 +34,9 @@ export default function Conditions() {
 
       <h2>4. Exactitude des informations</h2>
       <p>
-        Les produits, prix et disponibilités affichés sur la marketplace proviennent des boutiques et
-        sont donnés à titre indicatif. Seules les informations affichées sur le site de la boutique au
-        moment de la commande font foi.
+        Les boutiques et fournisseurs présentés sur ce site le sont à titre indicatif. Seules les
+        informations affichées sur le site de la boutique, ou sur la plateforme fournisseurs, au moment
+        de la commande ou du contact font foi.
       </p>
 
       <h2>5. Utilisation du site</h2>
