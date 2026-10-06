@@ -7,6 +7,7 @@ import Accueil from './pages/Accueil.jsx';
 import MentionsLegales from './pages/MentionsLegales.jsx';
 import Confidentialite from './pages/Confidentialite.jsx';
 import Conditions from './pages/Conditions.jsx';
+import { useApparitionAuDefilement } from './utils/useApparitionAuDefilement.js';
 
 // Remonte en haut à chaque changement de page, ou va à l'ancre (#boutiques...) si l'adresse en contient une
 function GestionDuScroll() {
@@ -43,12 +44,15 @@ function Introuvable() {
 
 export default function App() {
   const [modaleOuverte, setModaleOuverte] = useState(false);
+  const { pathname } = useLocation();
+  useApparitionAuDefilement(pathname);
 
   return (
     <div>
       <GestionDuScroll />
       <Header onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
 
+      <div key={pathname} className="loo-page">
       <Routes>
         <Route path="/" element={<Accueil onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
@@ -56,6 +60,7 @@ export default function App() {
         <Route path="/conditions" element={<Conditions />} />
         <Route path="*" element={<Introuvable />} />
       </Routes>
+      </div>
 
       <Footer onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
 

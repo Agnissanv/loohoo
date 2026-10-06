@@ -4,11 +4,13 @@ import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
 // Les photos défilent en fondu. Pour changer une image : remplacer le fichier dans public/images/ (ou modifier cette liste).
 const IMAGES = [
-  { src: '/images/hero-adjame.jpg', alt: "Pagnes et tissus empilés sur un étal du marché d'Adjamé, à Abidjan", credit: 'Eva Blue, Unsplash', position: 'center 40%' },
-  { src: '/images/hero-marche.jpg', alt: 'Une rue commerçante animée, étals et acheteurs', credit: 'Al-amin Muhammad, Pexels', position: 'center 55%' },
-  { src: '/images/hero-etal.jpg', alt: 'Une commerçante souriante derrière son étal', credit: 'iv image.ng, Pexels', position: 'center 30%' },
+  { src: '/images/hero-adjame.jpg', legende: 'Fournisseurs', alt: "Pagnes et tissus empilés sur un étal du marché d'Adjamé, à Abidjan", credit: 'Eva Blue, Unsplash', position: 'center 40%' },
+  { src: '/images/vendeur-piments.jpg', legende: 'Vendeurs', alt: 'Un vendeur assis devant des piments et des sacs de condiments', credit: 'kazys-photography, Pexels', position: 'center 45%' },
+  { src: '/images/acheteurs-marche.jpg', legende: 'Acheteurs', alt: "Des acheteurs au milieu des sacs de riz d'un marché", credit: 'el-bataky-photos, Pexels', position: 'center 55%' },
+  { src: '/images/entrepot-sacs.jpg', legende: 'Fournisseurs', alt: "Un entrepôt de marché rempli de sacs d'épices et de tubercules", credit: 'phinley-sperrer, Pexels', position: 'center 50%' },
+  { src: '/images/hero-etal.jpg', legende: 'Commerçants', alt: 'Une commerçante souriante derrière son étal', credit: 'iv image.ng, Pexels', position: 'center 30%' },
 ];
-const DUREE_MS = 6000;
+const DUREE_MS = 4500;
 
 // Hero « récit » : photos plein cadre en carrousel, une phrase, une action.
 export default function Hero() {
@@ -67,6 +69,7 @@ export default function Hero() {
             <button key={img.src} type="button" role="tab" aria-selected={i === actif} aria-label={`Photo ${i + 1} sur ${IMAGES.length}`}
               className={`loo-hero-point${i === actif ? ' loo-hero-point-actif' : ''}`} onClick={() => setActif(i)} />
           ))}
+          <span className="loo-hero-legende" aria-live="off">{IMAGES[actif].legende}</span>
         </div>
       </div>
 
