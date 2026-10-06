@@ -1,33 +1,49 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
+import MarqueVisage from './MarqueVisage.jsx';
+import SourireDiviseur from './SourireDiviseur.jsx';
 
-// Une promesse, deux portes, une vraie photo de marché.
 export default function Hero() {
   return (
-    <section id="accueil" className="loo-hero">
-      <div className="container loo-hero-grille">
-        <div className="loo-hero-texte">
-          <span className="etiquette">Côte d'Ivoire · bientôt au Mali</span>
-          <h1 className="loo-affiche">Les produits rares <span>au meilleur prix.</span></h1>
-          <p className="loo-hero-sous">
-            LOOHOO met en relation les acheteurs avec des grossistes et fabricants dont l'entreprise, les produits
-            et le stock ont été contrôlés par notre équipe. Vous demandez un devis, vous négociez dans la messagerie, vous commandez.
-          </p>
-          <div className="loo-hero-actions">
-            <a href={URL_ACHETER} className="btn btn-primary">Trouver un fournisseur <ArrowRight size={16} /></a>
-            <a href={URL_DEVENIR_FOURNISSEUR} className="btn btn-outline">Je suis fournisseur</a>
+    <section id="accueil">
+      <div style={styles.fond}>
+        <div className="container loo-hero-grille" style={styles.grille}>
+          <div>
+            <span className="etiquette" style={{ color: 'var(--loo-papier)', opacity: 0.85 }}>
+              Côte d'Ivoire · bientôt au Mali
+            </span>
+            <h1 style={styles.titre}>
+              Les produits rares au meilleur prix.
+            </h1>
+            <p style={styles.texte}>
+              LOOHOO, le marché qui connecte fournisseurs, vendeurs et clients : trouvez un fournisseur vérifié,
+              présentez vos produits en gros ou lancez votre boutique en ligne.
+            </p>
+            <div style={styles.boutons}>
+              <a href="#parcours" className="btn btn-clair">Choisir mon parcours</a>
+            </div>
           </div>
-          <a href="#boutiques" className="loo-hero-lien">Ou découvrir les boutiques LOOHOO</a>
-        </div>
 
-        <figure className="loo-hero-photo">
-          <div className="loo-cadre">
-            <img src="/images/adjame-textiles.jpg" alt="Pagnes et tissus empilés sur un étal du marché d'Adjamé, à Abidjan" width="1600" height="1067" />
+          <div style={styles.visageBloc}>
+            <MarqueVisage taille={260} />
           </div>
-          <figcaption className="etiquette">Marché d'Adjamé, Abidjan</figcaption>
-        </figure>
+        </div>
       </div>
+
+      <SourireDiviseur fond="var(--loo-rouge)" suivant="var(--loo-papier)" />
     </section>
   );
 }
+
+const styles = {
+  fond: { background: 'var(--gradient-marque)', paddingTop: '4rem', paddingBottom: '3rem' },
+  grille: {
+    display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2.5rem', alignItems: 'center',
+  },
+  titre: {
+    fontSize: 'clamp(2.1rem, 4.8vw, 3.4rem)', lineHeight: 1.06, margin: '0.6rem 0 1.2rem',
+    color: 'var(--loo-papier)', fontWeight: 700, maxWidth: '18ch',
+  },
+  texte: { maxWidth: '520px', fontSize: '1.05rem', color: 'var(--loo-papier)', opacity: 0.92, marginBottom: '1.8rem' },
+  boutons: { display: 'flex', gap: '1rem', flexWrap: 'wrap' },
+  visageBloc: { display: 'flex', justifyContent: 'center' },
+};

@@ -1,21 +1,24 @@
 import React from 'react';
 import Hero from '../components/Hero.jsx';
-import Recits from '../components/Recits.jsx';
-import Verification from '../components/Verification.jsx';
+import Parcours from '../components/Parcours.jsx';
+import CommentCaMarche from '../components/CommentCaMarche.jsx';
 import Fournisseurs from '../components/Fournisseurs.jsx';
 import Boutiques from '../components/Boutiques.jsx';
-import Nom from '../components/Nom.jsx';
+import Services from '../components/Services.jsx';
+import Mission from '../components/Mission.jsx';
 import Faq from '../components/Faq.jsx';
 
+// Le portail : chacun choisit son parcours, puis découvre comment ça marche, les fournisseurs, les boutiques.
 export default function Accueil({ onOuvrirBientotDisponible }) {
   return (
     <>
       <Hero />
-      <Recits />
-      <Verification />
+      <Parcours onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
+      <CommentCaMarche />
       <Fournisseurs />
       <Boutiques onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
-      <Nom />
+      <Mission />
+      <Services onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
       <Faq />
     </>
   );

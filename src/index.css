@@ -171,6 +171,8 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 900px) {
+  .loo-hero-grille { grid-template-columns: 1fr !important; text-align: center; }
+  .loo-hero-grille > div:first-child { display: flex; flex-direction: column; align-items: center; }
   .loo-mission-grille { grid-template-columns: 1fr !important; }
   .loo-boutiques-grille { grid-template-columns: 1fr !important; }
   .loo-boutiques-grille > .carte-vedette { grid-column: span 1 !important; }
@@ -219,66 +221,3 @@ details > summary::after { content: '+'; float: right; font-weight: 700; color: 
 details[open] > summary::after { content: '–'; }
 @media (max-width: 1000px) { .loo-parcours-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .loo-parcours-grille, .loo-etapes-grille { grid-template-columns: minmax(0, 1fr); } }
-
-
-/* ---- refonte : affiche, cadres photo, récits ---- */
-.loo-affiche {
-  font-family: var(--police-affiche);
-  font-variation-settings: 'wdth' 75;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.005em;
-  line-height: 0.98;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  margin: 0.5rem 0 1.2rem;
-}
-.loo-cadre { border-radius: var(--coupe); overflow: hidden; box-shadow: 14px 14px 0 var(--loo-orange); }
-.loo-cadre img { width: 100%; height: 100%; object-fit: cover; }
-.loo-lien { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 2px; margin-top: 0.6rem; }
-
-.loo-hero { padding: 3.5rem 0 5rem; background: var(--loo-blanc); }
-.loo-hero-grille { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: center; }
-.loo-hero .loo-affiche { font-size: clamp(2.6rem, 6.4vw, 5.2rem); }
-.loo-hero .loo-affiche span { color: var(--loo-rouge); }
-.loo-hero-sous { max-width: 52ch; font-size: 1.05rem; margin: 0 0 1.8rem; opacity: 0.82; }
-.loo-hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
-.loo-hero-lien { display: inline-block; margin-top: 1.3rem; font-size: 0.92rem; text-decoration: underline; text-underline-offset: 3px; }
-.loo-hero-photo { margin: 0; }
-.loo-hero-photo .loo-cadre { aspect-ratio: 4 / 3.4; }
-.loo-hero-photo figcaption { margin-top: 1.3rem; color: var(--loo-encre); opacity: 0.6; }
-
-.loo-recit { padding: 5rem 0; background: var(--loo-papier); }
-.loo-recit-inverse { background: var(--loo-encre); color: var(--loo-papier); }
-.loo-recit-inverse .loo-affiche { color: var(--loo-papier); }
-.loo-recit-inverse .etiquette { color: var(--loo-orange); }
-.loo-recit-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.loo-recit-texte p { max-width: 50ch; opacity: 0.85; }
-.loo-recit-photo .loo-cadre { aspect-ratio: 4 / 4.2; max-width: 460px; }
-.loo-recit-photo .loo-cadre-haut { aspect-ratio: 3 / 4; max-width: 400px; }
-.loo-recit-inverse .loo-recit-photo { display: flex; justify-content: center; }
-
-.loo-verif { padding: 5rem 0; background: var(--loo-blanc); }
-.loo-verif .loo-affiche { max-width: 16ch; }
-.loo-verif-liste { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 3px solid var(--loo-encre); }
-.loo-verif-liste li { padding: 1.4rem 1.4rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; }
-.loo-verif-liste strong { font-family: var(--police-affiche); font-size: 1.3rem; }
-.loo-verif-liste span { font-size: 0.95rem; opacity: 0.75; line-height: 1.55; }
-
-.loo-nom { padding: 4.5rem 0; background: var(--gradient-marque); color: var(--loo-papier); }
-.loo-nom .loo-affiche, .loo-nom .etiquette { color: var(--loo-papier); }
-.loo-nom p { max-width: 54ch; opacity: 0.95; }
-.loo-nom-grille { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
-
-@media (max-width: 900px) {
-  .loo-hero-grille, .loo-recit-grille, .loo-nom-grille { grid-template-columns: 1fr; gap: 2.5rem; }
-  .loo-hero-photo { order: -1; }
-  .loo-hero { padding-top: 2rem; }
-  .loo-recit { padding: 3.5rem 0; }
-  .loo-recit-inverse .loo-recit-photo { order: -1; }
-  .loo-verif-liste { grid-template-columns: 1fr 1fr; }
-  .loo-nom-grille svg { display: none; }
-  .loo-cadre { box-shadow: 8px 8px 0 var(--loo-orange); }
-}
-@media (max-width: 520px) {
-  .loo-verif-liste { grid-template-columns: 1fr; }
-}
