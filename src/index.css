@@ -229,8 +229,8 @@ details[open] > summary::after { content: '–'; }
 .loo-hero-voile { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 18, 13, 0.82) 0%, rgba(23, 18, 13, 0.55) 45%, rgba(23, 18, 13, 0.12) 100%), linear-gradient(0deg, rgba(23, 18, 13, 0.55) 0%, transparent 40%); }
 .loo-hero-contenu { position: relative; width: 100%; }
 .loo-hero-surtitre { margin: 0 0 1rem; font-family: var(--police-etiquette); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
-.loo-hero-titre { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: clamp(2.7rem, 7vw, 5.6rem); line-height: 1.02; letter-spacing: -0.02em; color: #fff; margin: 0 0 1.4rem; max-width: 14ch; }
-.loo-hero-titre em { font-style: italic; font-weight: 300; color: var(--loo-orange); }
+.loo-hero-titre { font-family: var(--police-affiche); font-weight: 600; font-size: clamp(2.6rem, 6.6vw, 5.2rem); line-height: 1.02; letter-spacing: -0.025em; color: #fff; margin: 0 0 1.4rem; max-width: 14ch; }
+.loo-hero-titre em { font-style: normal; color: var(--loo-orange); }
 .loo-hero-texte { max-width: 46ch; font-size: 1.05rem; line-height: 1.6; margin: 0 0 2rem; opacity: 0.92; }
 .loo-hero-actions { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
 .loo-hero-lien { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; padding-bottom: 4px; border-bottom: 1.5px solid #fff; transition: gap 0.2s ease; }
