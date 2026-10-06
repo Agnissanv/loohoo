@@ -57,7 +57,7 @@ export default function App() {
         <Route path="*" element={<Introuvable />} />
       </Routes>
 
-      <Footer />
+      <Footer onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
 
       {/* La fenêtre est à la racine, jamais dans le header (sinon elle reste coincée dans son empilement CSS) */}
       {modaleOuverte && (

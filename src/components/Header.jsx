@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { URL_ACHETER } from '../config.js';
 
 export default function Header({ onOuvrirBientotDisponible }) {
   const [menuOuvert, setMenuOuvert] = useState(false);
@@ -28,16 +29,17 @@ export default function Header({ onOuvrirBientotDisponible }) {
         </button>
 
         <nav className={menuOuvert ? 'loo-nav loo-nav-ouvert' : 'loo-nav'}>
-          <Link to="/#boutiques" style={styles.lien} onClick={fermer}>Nos boutiques</Link>
-          <Link to="/#fournisseurs" style={styles.lien} onClick={fermer}>Nos fournisseurs</Link>
-          <a href="https://fournisseurs.looh-oo.com" style={styles.lien} onClick={fermer}>Trouver un fournisseur</a>
+          <Link to="/#parcours" style={styles.lien} onClick={fermer}>Mon parcours</Link>
+          <Link to="/#comment" style={styles.lien} onClick={fermer}>Comment ça marche</Link>
+          <Link to="/#boutiques" style={styles.lien} onClick={fermer}>Boutiques</Link>
+          <a href={URL_ACHETER} className="btn btn-outline" style={{ padding: '0.55em 1.2em', fontSize: '0.85rem' }} onClick={fermer}>Trouver un fournisseur</a>
           <button
             type="button"
             className="btn btn-primary"
             style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }}
             onClick={() => { fermer(); onOuvrirBientotDisponible(); }}
           >
-            Vendre en ligne
+            Créer ma boutique
           </button>
         </nav>
       </div>

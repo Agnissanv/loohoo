@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MarqueVisage from './MarqueVisage.jsx';
 import SourireDiviseur from './SourireDiviseur.jsx';
+import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
-export default function Footer() {
+export default function Footer({ onOuvrirBientotDisponible }) {
   return (
     <footer id="partenaire">
       <SourireDiviseur fond="var(--loo-blanc)" suivant="var(--loo-encre)" />
@@ -15,30 +16,31 @@ export default function Footer() {
               <MarqueVisage couleur="var(--loo-papier)" taille={40} />
               <span style={styles.logoTexte}>LOOHOO</span>
             </div>
-            <p style={styles.slogan}>Les produits rares au meilleur prix.</p>
+            <p style={styles.slogan}>Le marché qui connecte fournisseurs, vendeurs et clients.</p>
           </div>
 
           <div style={styles.colonne}>
-            <h4 style={styles.titreColonne}>Ouvrir votre boutique avec LOOHOO</h4>
+            <h4 style={styles.titreColonne}>Vous cherchez un fournisseur ?</h4>
             <p style={styles.texte}>
-              Vous vendez des produits spécialisés et voulez votre propre boutique sur un
-              sous-domaine LOOHOO ? Contactez-nous :
+              Trouvez un grossiste ou fabricant vérifié, comparez les prix de gros et demandez un devis.
             </p>
-            {/* TODO : confirmer avec le client que cette adresse e-mail existe bien */}
-            <a href="mailto:contact@looh-oo.com" className="btn btn-clair" style={{ marginTop: '0.8rem' }}>
-              contact@looh-oo.com
-            </a>
+            <a href={URL_ACHETER} className="btn btn-clair" style={{ marginTop: '0.8rem' }}>Trouver un fournisseur</a>
           </div>
 
           <div style={styles.colonne}>
             <h4 style={styles.titreColonne}>Vous êtes fournisseur ?</h4>
             <p style={styles.texte}>
-              Créez votre compte pour présenter votre catalogue aux vendeurs. Chaque profil est vérifié
-              par notre équipe avant publication.
+              Présentez votre catalogue aux acheteurs. Chaque profil est vérifié par notre équipe avant publication.
             </p>
-            <a href="https://fournisseurs.looh-oo.com/inscription" className="btn btn-outline" style={{ marginTop: '0.8rem' }}>
-              Créer mon compte fournisseur
-            </a>
+            <a href={URL_DEVENIR_FOURNISSEUR} className="btn btn-outline" style={{ marginTop: '0.8rem' }}>Devenir fournisseur</a>
+          </div>
+
+          <div style={styles.colonne}>
+            <h4 style={styles.titreColonne}>Votre boutique en ligne</h4>
+            <p style={styles.texte}>
+              La création de boutique sous LOOHOO arrive bientôt. Laissez votre e-mail pour être prévenu.
+            </p>
+            <button type="button" className="btn btn-outline" style={{ marginTop: '0.8rem' }} onClick={onOuvrirBientotDisponible}>Être prévenu</button>
           </div>
         </div>
 

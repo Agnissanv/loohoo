@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, BadgeCheck, Factory, MapPin, Package } from 'lucide-react';
 import { recupererFournisseursVedette } from '../api/fournisseurs.js';
 import { optimiserImageCloudinary } from '../utils/cloudinaryOptimize.js';
+import { URL_FOURNISSEURS, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
 const LIMITE = 6;
-const URL_PLATEFORME = 'https://fournisseurs.looh-oo.com';
+const URL_PLATEFORME = URL_FOURNISSEURS;
 
 export default function Fournisseurs() {
   const [liste, setListe] = useState(null); // null = chargement
@@ -46,9 +47,12 @@ export default function Fournisseurs() {
           </div>
         )}
 
-        <a href={URL_PLATEFORME} className="btn btn-primary" style={{ marginTop: '2.2rem' }}>
-          Voir tous les fournisseurs <ArrowUpRight size={16} />
-        </a>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2.2rem' }}>
+          <a href={URL_PLATEFORME} className="btn btn-primary">
+            Voir tous les fournisseurs <ArrowUpRight size={16} />
+          </a>
+          <a href={URL_DEVENIR_FOURNISSEUR} className="btn btn-outline">Devenir fournisseur</a>
+        </div>
       </div>
     </section>
   );

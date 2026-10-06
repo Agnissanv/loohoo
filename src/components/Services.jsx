@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Palette, Search, Store, Truck } from 'lucide-react';
+import { URL_ACHETER } from '../config.js';
 
 const SERVICES = [
   {
@@ -48,11 +49,11 @@ export default function Services({ onOuvrirBientotDisponible }) {
         </div>
 
         <div style={styles.boutons}>
-          <a href="https://fournisseurs.looh-oo.com" className="btn btn-primary">
+          <a href={URL_ACHETER} className="btn btn-primary">
             Trouver un fournisseur <ArrowUpRight size={16} />
           </a>
           <button type="button" className="btn btn-outline" onClick={onOuvrirBientotDisponible}>
-            Vendre en ligne
+            Créer ma boutique
           </button>
         </div>
       </div>
