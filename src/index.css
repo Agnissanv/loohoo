@@ -225,7 +225,8 @@ details[open] > summary::after { content: '–'; }
 
 /* ---- hero récit : photo plein cadre ---- */
 .loo-hero { position: relative; min-height: min(92vh, 780px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; margin-top: -65px; padding: 7rem 0 4rem; background: var(--loo-encre); }
-.loo-hero-fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.loo-hero-fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 1.4s ease, transform 7s ease-out; }
+.loo-hero-fond-actif { opacity: 1; transform: scale(1); }
 .loo-hero-voile { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 18, 13, 0.82) 0%, rgba(23, 18, 13, 0.55) 45%, rgba(23, 18, 13, 0.12) 100%), linear-gradient(0deg, rgba(23, 18, 13, 0.55) 0%, transparent 40%); }
 .loo-hero-contenu { position: relative; width: 100%; }
 .loo-hero-surtitre { margin: 0 0 1rem; font-family: var(--police-etiquette); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
@@ -249,3 +250,31 @@ details[open] > summary::after { content: '–'; }
   .loo-hero { min-height: 88vh; padding-bottom: 3rem; }
   .loo-hero-voile { background: linear-gradient(0deg, rgba(23, 18, 13, 0.88) 0%, rgba(23, 18, 13, 0.5) 55%, rgba(23, 18, 13, 0.25) 100%); }
 }
+
+
+/* ---- style récit étendu : grandes portes photo, titres aérés ---- */
+.section-titre { font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; font-size: clamp(2rem, 4.2vw, 3.2rem); }
+.loo-portes { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 1.1rem; margin-top: 2.2rem; }
+.loo-porte { position: relative; display: flex; align-items: flex-end; min-height: 460px; overflow: hidden; border-radius: var(--coupe); color: #fff; text-align: left; font: inherit; border: 0; padding: 0; cursor: pointer; }
+.loo-porte-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.loo-porte-photo:hover img { transform: scale(1.04); }
+.loo-porte-voile { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(23, 18, 13, 0.88) 0%, rgba(23, 18, 13, 0.35) 55%, rgba(23, 18, 13, 0.05) 100%); }
+.loo-porte-marque { background: var(--gradient-marque); }
+.loo-porte-texte { position: relative; padding: 1.6rem; display: grid; gap: 0.6rem; }
+.loo-porte-texte h3 { color: #fff; font-size: 1.55rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.loo-porte-texte p { margin: 0; font-size: 0.95rem; line-height: 1.55; opacity: 0.92; max-width: 34ch; }
+.loo-porte-lien { display: inline-flex; align-items: center; gap: 0.5rem; justify-self: start; font-weight: 600; margin-top: 0.4rem; padding-bottom: 3px; border-bottom: 1.5px solid #fff; transition: gap 0.2s ease; }
+.loo-porte:hover .loo-porte-lien { gap: 0.8rem; }
+@media (max-width: 900px) { .loo-portes { grid-template-columns: 1fr; } .loo-porte { min-height: 340px; } }
+
+.loo-hero-points { display: flex; gap: 0.5rem; margin-top: 2.2rem; }
+.loo-hero-point { width: 28px; height: 4px; padding: 0; border: 0; border-radius: 2px; background: rgba(255, 255, 255, 0.35); cursor: pointer; transition: background 0.3s ease, width 0.3s ease; }
+.loo-hero-point:hover { background: rgba(255, 255, 255, 0.65); }
+.loo-hero-point-actif { width: 44px; background: var(--loo-orange); }
+@media (prefers-reduced-motion: reduce) { .loo-hero-fond { transition: opacity 0.01ms; transform: none; } }
+
+/* ---- même esprit que le hero : plus d'air, titres plus grands ---- */
+.section { padding: 7rem 0; }
+.section-titre { font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.025em; max-width: 18ch; margin: 0.6rem 0 1.4rem; }
+.section-intro { font-size: 1.12rem; max-width: 52ch; }
+@media (max-width: 640px) { .section { padding: 4rem 0; } }
