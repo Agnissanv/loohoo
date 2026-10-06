@@ -221,3 +221,31 @@ details > summary::after { content: '+'; float: right; font-weight: 700; color: 
 details[open] > summary::after { content: '–'; }
 @media (max-width: 1000px) { .loo-parcours-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .loo-parcours-grille, .loo-etapes-grille { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* ---- hero récit : photo plein cadre ---- */
+.loo-hero { position: relative; min-height: min(92vh, 780px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; margin-top: -65px; padding: 7rem 0 4rem; background: var(--loo-encre); }
+.loo-hero-fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.loo-hero-voile { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 18, 13, 0.82) 0%, rgba(23, 18, 13, 0.55) 45%, rgba(23, 18, 13, 0.12) 100%), linear-gradient(0deg, rgba(23, 18, 13, 0.55) 0%, transparent 40%); }
+.loo-hero-contenu { position: relative; width: 100%; }
+.loo-hero-surtitre { margin: 0 0 1rem; font-family: var(--police-etiquette); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+.loo-hero-titre { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: clamp(2.7rem, 7vw, 5.6rem); line-height: 1.02; letter-spacing: -0.02em; color: #fff; margin: 0 0 1.4rem; max-width: 14ch; }
+.loo-hero-titre em { font-style: italic; font-weight: 300; color: var(--loo-orange); }
+.loo-hero-texte { max-width: 46ch; font-size: 1.05rem; line-height: 1.6; margin: 0 0 2rem; opacity: 0.92; }
+.loo-hero-actions { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
+.loo-hero-lien { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; padding-bottom: 4px; border-bottom: 1.5px solid #fff; transition: gap 0.2s ease; }
+.loo-hero-lien:hover { gap: 0.9rem; }
+.loo-hero-bouton { padding: 0.75em 1.5em; border: 1.5px solid rgba(255, 255, 255, 0.7); border-radius: var(--rayon-sm); font-weight: 600; font-size: 0.95rem; transition: background 0.2s ease; }
+.loo-hero-bouton:hover { background: rgba(255, 255, 255, 0.14); }
+.loo-hero-credit { position: absolute; right: 1.2rem; bottom: 0.8rem; font-size: 0.7rem; opacity: 0.6; }
+
+/* menu flottant sur la photo (accueil, en haut de page, hors menu mobile ouvert) */
+.loo-header-photo { background: transparent !important; backdrop-filter: none !important; border-bottom-color: transparent !important; }
+.loo-header-photo a:not(.btn), .loo-header-photo span { color: #fff !important; }
+.loo-header-photo .btn-outline { color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+.loo-header-photo .btn-primary { background: #fff; color: var(--loo-encre); }
+.loo-header-photo .loo-nav-bouton-mobile { color: #fff; }
+@media (max-width: 640px) {
+  .loo-hero { min-height: 88vh; padding-bottom: 3rem; }
+  .loo-hero-voile { background: linear-gradient(0deg, rgba(23, 18, 13, 0.88) 0%, rgba(23, 18, 13, 0.5) 55%, rgba(23, 18, 13, 0.25) 100%); }
+}

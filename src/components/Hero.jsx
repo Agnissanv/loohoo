@@ -1,49 +1,31 @@
 import React from 'react';
-import MarqueVisage from './MarqueVisage.jsx';
-import SourireDiviseur from './SourireDiviseur.jsx';
+import { ArrowRight } from 'lucide-react';
+import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
+// Hero « récit » : une vraie photo de marché plein cadre, une phrase, une action.
 export default function Hero() {
   return (
-    <section id="accueil">
-      <div style={styles.fond}>
-        <div className="container loo-hero-grille" style={styles.grille}>
-          <div>
-            <span className="etiquette" style={{ color: 'var(--loo-papier)', opacity: 0.85 }}>
-              Côte d'Ivoire · bientôt au Mali
-            </span>
-            <h1 style={styles.titre}>
-              Les produits rares au meilleur prix.
-            </h1>
-            <p style={styles.texte}>
-              LOOHOO, le marché qui connecte fournisseurs, vendeurs et clients : trouvez un fournisseur vérifié,
-              présentez vos produits en gros ou lancez votre boutique en ligne.
-            </p>
-            <div style={styles.boutons}>
-              <a href="#parcours" className="btn btn-clair">Choisir mon parcours</a>
-            </div>
-          </div>
+    <section id="accueil" className="loo-hero">
+      <img className="loo-hero-fond" src="/images/hero-adjame.jpg" alt="Pagnes et tissus empilés sur un étal du marché d'Adjamé, à Abidjan" width="1600" height="1067" fetchpriority="high" />
+      <div className="loo-hero-voile" aria-hidden="true" />
 
-          <div style={styles.visageBloc}>
-            <MarqueVisage taille={260} />
-          </div>
+      <div className="container loo-hero-contenu">
+        <p className="loo-hero-surtitre">Côte d'Ivoire · bientôt au Mali</p>
+        <h1 className="loo-hero-titre">
+          Les produits rares<br />
+          <em>au meilleur prix.</em>
+        </h1>
+        <p className="loo-hero-texte">
+          LOOHOO met en relation fournisseurs, vendeurs et clients. Chaque fournisseur est contrôlé par notre équipe avant
+          d'apparaître : entreprise, produits et stock.
+        </p>
+        <div className="loo-hero-actions">
+          <a href={URL_ACHETER} className="loo-hero-lien">Trouver un fournisseur <ArrowRight size={18} /></a>
+          <a href={URL_DEVENIR_FOURNISSEUR} className="loo-hero-bouton">Je suis fournisseur</a>
         </div>
       </div>
 
-      <SourireDiviseur fond="var(--loo-rouge)" suivant="var(--loo-papier)" />
+      <span className="loo-hero-credit">Photo : Eva Blue, Unsplash</span>
     </section>
   );
 }
-
-const styles = {
-  fond: { background: 'var(--gradient-marque)', paddingTop: '4rem', paddingBottom: '3rem' },
-  grille: {
-    display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2.5rem', alignItems: 'center',
-  },
-  titre: {
-    fontSize: 'clamp(2.1rem, 4.8vw, 3.4rem)', lineHeight: 1.06, margin: '0.6rem 0 1.2rem',
-    color: 'var(--loo-papier)', fontWeight: 700, maxWidth: '18ch',
-  },
-  texte: { maxWidth: '520px', fontSize: '1.05rem', color: 'var(--loo-papier)', opacity: 0.92, marginBottom: '1.8rem' },
-  boutons: { display: 'flex', gap: '1rem', flexWrap: 'wrap' },
-  visageBloc: { display: 'flex', justifyContent: 'center' },
-};

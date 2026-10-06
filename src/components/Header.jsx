@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { URL_ACHETER } from '../config.js';
 
 export default function Header({ onOuvrirBientotDisponible }) {
   const [menuOuvert, setMenuOuvert] = useState(false);
+  const { pathname } = useLocation();
+  const [enHaut, setEnHaut] = useState(true);
+
+  // Sur l'accueil, le menu flotte sur la photo tant qu'on n'a pas fait défiler la page
+  useEffect(() => {
+    const maj = () => setEnHaut(window.scrollY < 40);
+    maj();
+    window.addEventListener('scroll', maj, { passive: true });
+    return () => window.removeEventListener('scroll', maj);
+  }, []);
+  const surPhoto = pathname === '/' && enHaut && !menuOuvert;
 
   function fermer() {
     setMenuOuvert(false);
   }
 
   return (
-    <header style={styles.header}>
+    <header style={styles.header} className={surPhoto ? 'loo-header-photo' : undefined}>
       <div className="container" style={styles.barre}>
         <Link to="/" style={styles.logoLigne} onClick={fermer}>
           <img src="/logo.jpeg" alt="LOOHOO" style={styles.logo} width="38" height="38" />
