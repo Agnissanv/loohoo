@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Search, ShoppingBag, Store, Truck } from 'lucide-react';
+import { ArrowRight, Search, Store, Truck } from 'lucide-react';
 import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
 // Le cœur du portail : chacun choisit ce qu'il vient faire et arrive au bon endroit.
@@ -7,23 +7,18 @@ export default function Parcours({ onOuvrirBientotDisponible }) {
   const parcours = [
     {
       icone: Search, titre: 'Je cherche un fournisseur',
-      texte: "Je veux acheter en gros ou revendre. Je trouve un fournisseur vérifié, je compare les prix et je demande un devis.",
+      texte: "J'achète en gros ou je revends. Je compare des fournisseurs vérifiés et je demande un devis.",
       action: 'Trouver un fournisseur', lien: URL_ACHETER, etat: 'En service',
     },
     {
       icone: Truck, titre: 'Je suis fournisseur',
-      texte: "Je suis grossiste ou fabricant. Je présente mon catalogue à des acheteurs et je reçois des demandes de devis.",
+      texte: 'Je suis grossiste ou fabricant. Je présente mon catalogue et je reçois des demandes de devis.',
       action: 'Devenir fournisseur', lien: URL_DEVENIR_FOURNISSEUR, etat: 'En service',
     },
     {
       icone: Store, titre: 'Je veux ma boutique en ligne',
-      texte: "Je vends mes produits et je veux ma propre boutique, sur mon sous-domaine LOOHOO.",
+      texte: 'Je vends mes produits et je veux ma propre boutique, sur mon sous-domaine LOOHOO.',
       action: 'Être prévenu', onClick: onOuvrirBientotDisponible, etat: 'Bientôt',
-    },
-    {
-      icone: ShoppingBag, titre: 'Je veux acheter',
-      texte: 'Je cherche des produits pour moi : je découvre les boutiques de l’écosystème LOOHOO.',
-      action: 'Voir les boutiques', lien: '#boutiques', etat: 'En service',
     },
   ];
 

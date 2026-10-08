@@ -211,16 +211,16 @@ img { max-width: 100%; display: block; }
 @media (max-width: 560px) { .loo-services-grille { grid-template-columns: 1fr; } }
 
 /* ---- portail : parcours et étapes ---- */
-.loo-parcours-grille { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.loo-parcours-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2rem; }
 .loo-parcours-carte { display: flex; flex-direction: column; padding: 1.5rem; text-align: left; font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--loo-papier-ombre); transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .loo-parcours-carte:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(23, 18, 13, 0.12); }
-.loo-etapes-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2.2rem; }
+.loo-etapes-grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2.2rem; }
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 details > summary::after { content: '+'; float: right; font-weight: 700; color: var(--loo-rouge); }
 details[open] > summary::after { content: '–'; }
-@media (max-width: 1000px) { .loo-parcours-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .loo-parcours-grille, .loo-etapes-grille { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 900px) { .loo-parcours-grille { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { .loo-etapes-grille { grid-template-columns: minmax(0, 1fr); } }
 
 
 /* ---- hero récit : photo plein cadre ---- */
@@ -343,3 +343,10 @@ a.carte:active { transform: translateY(-1px); }
   .loo-chargement-page::after { animation-duration: 2.4s; }
   a.carte:hover, a.carte:hover .loo-img-fondu { transform: none; }
 }
+
+
+/* ---- LOOHOO aujourd'hui ---- */
+.loo-chiffres { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin-top: 0.8rem; }
+.loo-chiffres > div { display: flex; flex-direction: column; }
+.loo-chiffres strong { font-family: var(--police-affiche); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1; color: var(--loo-orange); letter-spacing: -0.02em; }
+.loo-chiffres span { font-size: 0.9rem; opacity: 0.75; margin-top: 0.3rem; }

@@ -7,6 +7,7 @@ import Boutiques from '../components/Boutiques.jsx';
 import Services from '../components/Services.jsx';
 import Mission from '../components/Mission.jsx';
 import Faq from '../components/Faq.jsx';
+import ChiffresLoohoo from '../components/ChiffresLoohoo.jsx';
 
 // Le portail : chacun choisit son parcours, puis découvre comment ça marche, les fournisseurs, les boutiques.
 export default function Accueil({ onOuvrirBientotDisponible }) {
@@ -19,6 +20,7 @@ export default function Accueil({ onOuvrirBientotDisponible }) {
       <Boutiques onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
       <Mission />
       <Services onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
+      <ChiffresLoohoo />
       <Faq />
     </>
   );

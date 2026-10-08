@@ -2,27 +2,19 @@ import React from 'react';
 
 const COLONNES = [
   {
-    titre: 'Pour les acheteurs', etiquette: 'Acheter en gros',
+    titre: 'Acheter en gros', etiquette: 'Pour les acheteurs',
     etapes: [
       'Cherchez un produit et comparez les fournisseurs vérifiés.',
       'Demandez un devis : quantité, ville de livraison, délai.',
-      'Discutez avec le fournisseur dans la messagerie LOOHOO, puis concluez.',
+      'Discutez dans la messagerie LOOHOO, puis concluez.',
     ],
   },
   {
-    titre: 'Pour les fournisseurs', etiquette: 'Vendre en gros',
+    titre: 'Vendre en gros', etiquette: 'Pour les fournisseurs',
     etapes: [
       'Créez votre profil et ajoutez vos produits avec leur prix de gros.',
-      "Notre équipe vérifie votre entreprise et vos produits avant publication.",
+      'Notre équipe vérifie votre entreprise et vos produits.',
       'Recevez des demandes de devis et répondez depuis votre espace.',
-    ],
-  },
-  {
-    titre: 'Pour les boutiques', etiquette: 'Bientôt',
-    etapes: [
-      'Laissez votre e-mail pour être prévenu de l’ouverture.',
-      'Créez votre boutique en ligne en quelques étapes.',
-      'Gérez-la sur votre propre sous-domaine LOOHOO.',
     ],
   },
 ];
@@ -33,7 +25,7 @@ export default function CommentCaMarche() {
       <div className="container">
         <span className="etiquette">Comment ça marche</span>
         <h2 className="section-titre">Simple pour chacun.</h2>
-        <p className="section-intro">Trois parcours, une même exigence : des échanges clairs entre des professionnels de confiance.</p>
+        <p className="section-intro">Deux parcours, une même exigence : des échanges clairs entre des professionnels de confiance.</p>
 
         <div className="loo-etapes-grille">
           {COLONNES.map((c) => (
@@ -44,7 +36,7 @@ export default function CommentCaMarche() {
                 {c.etapes.map((e, i) => (
                   <li key={e} style={styles.etape}>
                     <span style={styles.numero}>{i + 1}</span>
-                    <span style={{ fontSize: '0.93rem', lineHeight: 1.5 }}>{e}</span>
+                    <span style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>{e}</span>
                   </li>
                 ))}
               </ol>

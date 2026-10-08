@@ -25,7 +25,7 @@ export default function Header({ onOuvrirBientotDisponible }) {
     <header style={styles.header} className={surPhoto ? 'loo-header-photo' : undefined}>
       <div className="container" style={styles.barre}>
         <Link to="/" style={styles.logoLigne} onClick={fermer}>
-          <img src="/logo.jpeg" alt="LOOHOO" style={styles.logo} width="38" height="38" />
+          <img src="/logo.webp" alt="LOOHOO" style={styles.logo} width="38" height="38" />
           <span style={styles.logoTexte}>LOOHOO</span>
         </Link>
 
