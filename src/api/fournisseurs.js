@@ -15,3 +15,11 @@ export async function recupererChiffresPublics() {
   if (error || !Array.isArray(data)) return null;
   return data[0] || null;
 }
+
+// Pays où LOOHOO est ouvert (migration 0024), dans l'ordre. null si indisponible.
+export async function recupererPaysOuverts() {
+  if (!supabase) return null;
+  const { data, error } = await supabase.from('pays_loohoo').select('code, nom, dans').eq('actif', true).order('ordre');
+  if (error || !Array.isArray(data) || data.length === 0) return null;
+  return data;
+}

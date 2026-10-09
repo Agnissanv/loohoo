@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
+import { recupererPaysOuverts } from '../api/fournisseurs.js';
 
 // Les photos défilent en fondu. Pour changer une image : remplacer le fichier dans public/images/ (ou modifier cette liste).
 const IMAGES = [
@@ -17,6 +18,13 @@ export default function Hero() {
   const [actif, setActif] = useState(0);
   const [pause, setPause] = useState(false);
   const [reduit, setReduit] = useState(false);
+  const [ouverts, setOuverts] = useState(null);
+
+  // « Disponible en Côte d'Ivoire », puis « en Côte d'Ivoire et au Mali »… selon les pays ouverts dans la base
+  useEffect(() => { recupererPaysOuverts().then(setOuverts); }, []);
+  const ouLoohoo = ouverts
+    ? ouverts.map((p) => p.dans).reduce((texte, dans, i, l) => (i === 0 ? dans : `${texte}${i === l.length - 1 ? ' et ' : ', '}${dans}`), '')
+    : "en Côte d'Ivoire";
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -50,7 +58,7 @@ export default function Hero() {
       <div className="loo-hero-voile" aria-hidden="true" />
 
       <div className="container loo-hero-contenu">
-        <p className="loo-hero-surtitre">Disponible en Côte d'Ivoire</p>
+        <p className="loo-hero-surtitre">Disponible {ouLoohoo}</p>
         <h1 className="loo-hero-titre">
           LOOHOO, <em>le grand marché digital</em> d'Afrique.
         </h1>
