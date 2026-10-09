@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { URL_ACHETER } from '../config.js';
+import { URL_ACHETER, URL_FOURNISSEURS } from '../config.js';
 
-export default function Header({ onOuvrirBientotDisponible }) {
+export default function Header() {
   const [menuOuvert, setMenuOuvert] = useState(false);
   const { pathname } = useLocation();
   const [enHaut, setEnHaut] = useState(true);
@@ -40,18 +40,13 @@ export default function Header({ onOuvrirBientotDisponible }) {
         </button>
 
         <nav className={menuOuvert ? 'loo-nav loo-nav-ouvert' : 'loo-nav'}>
-          <Link to="/#parcours" style={styles.lien} onClick={fermer}>Mon parcours</Link>
+          <Link to="/#parcours" style={styles.lien} onClick={fermer}>Que venez-vous faire ?</Link>
           <Link to="/#comment" style={styles.lien} onClick={fermer}>Comment ça marche</Link>
-          <Link to="/#boutiques" style={styles.lien} onClick={fermer}>Boutiques</Link>
+          <Link to="/a-propos" style={styles.lien} onClick={fermer}>À propos</Link>
           <a href={URL_ACHETER} className="btn btn-outline" style={{ padding: '0.55em 1.2em', fontSize: '0.85rem' }} onClick={fermer}>Trouver un fournisseur</a>
-          <button
-            type="button"
-            className="btn btn-primary"
-            style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }}
-            onClick={() => { fermer(); onOuvrirBientotDisponible(); }}
-          >
-            Créer ma boutique
-          </button>
+          <a href={`${URL_FOURNISSEURS}/inscription`} className="btn btn-primary" style={{ padding: '0.6em 1.3em', fontSize: '0.85rem', border: 0 }} onClick={fermer}>
+            Créer un compte
+          </a>
         </nav>
       </div>
     </header>

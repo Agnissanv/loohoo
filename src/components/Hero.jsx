@@ -50,19 +50,16 @@ export default function Hero() {
       <div className="loo-hero-voile" aria-hidden="true" />
 
       <div className="container loo-hero-contenu">
-        <p className="loo-hero-surtitre">Côte d'Ivoire · bientôt au Mali</p>
+        <p className="loo-hero-surtitre">Disponible en Côte d'Ivoire</p>
         <h1 className="loo-hero-titre">
-          Les produits rares<br />
-          <em>au meilleur prix.</em>
+          LOOHOO, <em>le grand marché digital</em> d'Afrique.
         </h1>
-        <p className="loo-hero-texte">
-          LOOHOO met en relation fournisseurs, vendeurs et clients. Chaque fournisseur est contrôlé par notre équipe avant
-          d'apparaître : entreprise, produits et stock.
-        </p>
+        <p className="loo-hero-texte">Le marché qui connecte fournisseurs, vendeurs et clients.</p>
         <div className="loo-hero-actions">
-          <a href={URL_ACHETER} className="loo-hero-lien">Trouver un fournisseur <ArrowRight size={18} /></a>
-          <a href={URL_DEVENIR_FOURNISSEUR} className="loo-hero-bouton">Je suis fournisseur</a>
+          <a href={URL_ACHETER} className="loo-hero-cta">Découvrir LOOHOO Fournisseurs <ArrowRight size={18} /></a>
+          <a href={URL_DEVENIR_FOURNISSEUR} className="loo-hero-lien">Je suis fournisseur</a>
         </div>
+        <p className="loo-hero-note">Notre première brique, déjà active</p>
 
         <div className="loo-hero-points" role="tablist" aria-label="Choisir la photo">
           {IMAGES.map((img, i) => (

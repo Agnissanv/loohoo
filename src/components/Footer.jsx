@@ -16,7 +16,7 @@ export default function Footer({ onOuvrirBientotDisponible }) {
               <MarqueVisage couleur="var(--loo-papier)" taille={40} />
               <span style={styles.logoTexte}>LOOHOO</span>
             </div>
-            <p style={styles.slogan}>Le marché qui connecte fournisseurs, vendeurs et clients.</p>
+            <p style={styles.slogan}>LOOHOO — Le grand marché digital.<br />Le marché qui connecte fournisseurs, vendeurs et clients.</p>
           </div>
 
           <div style={styles.colonne}>
@@ -50,6 +50,9 @@ export default function Footer({ onOuvrirBientotDisponible }) {
             <Link to="/mentions-legales" style={styles.lienLegal}>Mentions légales</Link>
             <Link to="/confidentialite" style={styles.lienLegal}>Confidentialité</Link>
             <Link to="/conditions" style={styles.lienLegal}>Conditions d'utilisation</Link>
+            <Link to="/a-propos" style={styles.lienLegal}>À propos</Link>
+            <a href="mailto:contact@looh-oo.com" style={styles.lienLegal}>Contact</a>
+            <a href="mailto:contact@looh-oo.com?subject=Partenariat%20LOOHOO" style={styles.lienLegal}>Partenariats &amp; collaborations</a>
           </nav>
           <a href="https://www.agnissanisaac.com/" target="_blank" rel="noreferrer" style={styles.credit}>Créé par Code A-Z</a>
         </div>

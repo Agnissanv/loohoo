@@ -230,7 +230,7 @@ details[open] > summary::after { content: '–'; }
 .loo-hero-voile { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23, 18, 13, 0.82) 0%, rgba(23, 18, 13, 0.55) 45%, rgba(23, 18, 13, 0.12) 100%), linear-gradient(0deg, rgba(23, 18, 13, 0.55) 0%, transparent 40%); }
 .loo-hero-contenu { position: relative; width: 100%; }
 .loo-hero-surtitre { margin: 0 0 1rem; font-family: var(--police-etiquette); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
-.loo-hero-titre { font-family: var(--police-affiche); font-weight: 600; font-size: clamp(2.6rem, 6.6vw, 5.2rem); line-height: 1.02; letter-spacing: -0.025em; color: #fff; margin: 0 0 1.4rem; max-width: 14ch; }
+.loo-hero-titre { font-family: var(--police-affiche); font-weight: 600; font-size: clamp(2.3rem, 5.2vw, 4.3rem); line-height: 1.04; letter-spacing: -0.025em; color: #fff; margin: 0 0 1.2rem; max-width: 17ch; }
 .loo-hero-titre em { font-style: normal; color: var(--loo-orange); }
 .loo-hero-texte { max-width: 46ch; font-size: 1.05rem; line-height: 1.6; margin: 0 0 2rem; opacity: 0.92; }
 .loo-hero-actions { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
@@ -350,3 +350,20 @@ a.carte:active { transform: translateY(-1px); }
 .loo-chiffres > div { display: flex; flex-direction: column; }
 .loo-chiffres strong { font-family: var(--police-affiche); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1; color: var(--loo-orange); letter-spacing: -0.02em; }
 .loo-chiffres span { font-size: 0.9rem; opacity: 0.75; margin-top: 0.3rem; }
+
+
+/* ---- page mère (maquette client) ---- */
+.loo-hero-titre em { font-style: normal; color: var(--loo-orange); }
+.loo-hero-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--loo-orange); color: #fff; font-weight: 700; padding: 0.9em 1.6em; border-radius: 12px; transition: transform 0.15s ease, box-shadow 0.2s ease; }
+.loo-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(247, 148, 29, 0.35); }
+.loo-hero-note { margin: 0.8rem 0 0; font-size: 0.82rem; opacity: 0.75; }
+.loo-lien-discret { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px; }
+.loo-lien-discret:hover { opacity: 1; }
+.loo-temoignages { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.2rem; margin-top: 1.6rem; }
+.loo-temoignage { margin: 0; padding: 1.5rem; position: relative; }
+.loo-temoignage blockquote { margin: 0 0 1.2rem; font-size: 1.05rem; line-height: 1.6; }
+.loo-temoignage figcaption { display: flex; align-items: center; gap: 0.7rem; }
+.loo-temoin-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--loo-papier-ombre); color: var(--loo-rouge); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+.loo-appel-fournisseur { text-align: center; border-top: 1px dashed var(--loo-papier-ombre); padding-top: 2rem; }
+.loo-appel-fournisseur p { margin: 0 0 0.4rem; opacity: 0.7; }
+.loo-appel-fournisseur a { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--loo-rouge); font-weight: 700; font-size: 1.05rem; }

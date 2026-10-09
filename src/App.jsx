@@ -7,6 +7,7 @@ import Accueil from './pages/Accueil.jsx';
 import MentionsLegales from './pages/MentionsLegales.jsx';
 import Confidentialite from './pages/Confidentialite.jsx';
 import Conditions from './pages/Conditions.jsx';
+import APropos from './pages/APropos.jsx';
 import { useApparitionAuDefilement } from './utils/useApparitionAuDefilement.js';
 
 // Remonte en haut à chaque changement de page, ou va à l'ancre (#boutiques...) si l'adresse en contient une
@@ -50,11 +51,12 @@ export default function App() {
   return (
     <div>
       <GestionDuScroll />
-      <Header onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
+      <Header />
 
       <div key={pathname} className="loo-page">
       <Routes>
         <Route path="/" element={<Accueil onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
+        <Route path="/a-propos" element={<APropos onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/conditions" element={<Conditions />} />

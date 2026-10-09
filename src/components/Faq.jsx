@@ -1,25 +1,22 @@
 import React from 'react';
 
+// Les quatre questions de la maquette du client
 const QUESTIONS = [
   {
     q: "Qu'est-ce que LOOHOO ?",
-    r: "LOOHOO est un marché qui connecte fournisseurs, vendeurs et clients. Il aide les vendeurs à créer, gérer et faire grandir leur commerce. Le nom vient du dan (yacouba), une langue de Côte d'Ivoire, et signifie « commerce, vente, achat ».",
+    r: "LOOHOO, c'est le grand marché digital d'Afrique : le marché qui connecte fournisseurs, vendeurs et clients. Notre première brique, LOOHOO Fournisseurs, permet de trouver un grossiste ou un fabricant vérifié au prix de gros. Le nom vient du dan (yacouba), une langue de Côte d'Ivoire, et signifie « commerce, vente, achat ».",
   },
   {
     q: 'Comment les fournisseurs sont-ils vérifiés ?',
-    r: "Notre équipe contrôle chaque profil et chaque produit avant publication : entreprise, photos, stock, contact. Le badge « Vérifié » n'est accordé qu'après ce contrôle.",
+    r: "Notre équipe contrôle chaque profil avant publication : pièces d'identité et documents administratifs, photos du stock réel, cohérence du local et de la ville déclarée. La fiabilité est suivie dans le temps : un profil peut être suspendu en cas d'écart.",
   },
   {
     q: 'Les coordonnées des fournisseurs sont-elles visibles ?',
-    r: "Non. Les échanges passent par la messagerie LOOHOO : les numéros de téléphone, e-mails et liens ne sont pas affichés et sont masqués s'ils sont écrits dans un message.",
-  },
-  {
-    q: 'Quand pourrai-je créer ma boutique en ligne ?',
-    r: "Bientôt. Laissez votre e-mail avec le bouton « Créer ma boutique » : nous vous prévenons dès l'ouverture.",
+    r: "Non. Les échanges passent par la messagerie LOOHOO : les numéros de téléphone, e-mails et liens ne sont pas affichés, et sont masqués s'ils sont écrits dans un message.",
   },
   {
     q: 'Dans quels pays LOOHOO est-il disponible ?',
-    r: "En Côte d'Ivoire aujourd'hui. Le Mali arrive bientôt.",
+    r: "Nous commençons par la Côte d'Ivoire. LOOHOO s'ouvrira ensuite à d'autres pays d'Afrique : la plateforme est prête à les accueillir.",
   },
 ];
 

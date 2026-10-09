@@ -3,17 +3,16 @@ import { recupererChiffresPublics } from '../api/fournisseurs.js';
 
 const nombre = (n) => Number(n).toLocaleString('fr-FR');
 
-// « LOOHOO aujourd'hui » : chiffres comptés dans la base. Rien ne s'affiche tant qu'il n'y a pas de fournisseur publié.
+// « LOOHOO aujourd'hui » : chiffres comptés dans la base (fournisseurs vérifiés, produits publiés, pays)
 export default function ChiffresLoohoo() {
   const [c, setC] = useState(null);
   useEffect(() => { recupererChiffresPublics().then(setC); }, []);
-  if (!c || c.fournisseurs === 0) return null;
+  if (!c) return null;
   const lignes = [
     [c.verifies, c.verifies > 1 ? 'Fournisseurs vérifiés' : 'Fournisseur vérifié'],
     [c.produits, c.produits > 1 ? 'Produits publiés' : 'Produit publié'],
     [c.pays, c.pays > 1 ? 'Pays couverts' : 'Pays couvert'],
-  ].filter(([n]) => n > 0);
-  if (lignes.length === 0) return null;
+  ];
   return (
     <section className="section" style={{ paddingTop: 0, paddingBottom: '2rem' }} aria-label="LOOHOO aujourd'hui">
       <div className="container">

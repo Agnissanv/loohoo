@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Store, Truck } from 'lucide-react';
 import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
 
@@ -48,6 +49,9 @@ export default function Parcours({ onOuvrirBientotDisponible }) {
             );
           })}
         </div>
+        <p style={{ textAlign: 'center', margin: '1.6rem 0 0' }}>
+          <Link to="/a-propos" className="loo-lien-discret">En savoir plus sur LOOHOO <ArrowRight size={15} /></Link>
+        </p>
       </div>
     </section>
   );
