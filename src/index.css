@@ -1,7 +1,9 @@
 :root {
   /* Couleurs — la charte LOOHOO, utilisée franchement (pas juste en petite touche) */
-  --loo-orange: #F7941D;
-  --loo-rouge: #EF4136;
+  --loo-orange: #FF6600;
+  --loo-orange-fonce: #E65C00;
+  --loo-orange-clair: #FFF1E6;
+  --loo-rouge: #D84315;
   --loo-encre: #17120D;
   --loo-papier: #FFF8EF;
   --loo-papier-ombre: #F0DFC4;
@@ -88,11 +90,12 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { transform: translateY(-2px); }
 
+/* Boutons d'action : orange (plus de noir) */
 .btn-primary {
-  background: var(--loo-encre);
-  color: var(--loo-papier);
+  background: var(--loo-orange);
+  color: #fff;
 }
-.btn-primary:hover { box-shadow: 0 8px 18px rgba(23, 18, 13, 0.25); }
+.btn-primary:hover { background: var(--loo-orange-fonce); box-shadow: 0 8px 18px rgba(255, 102, 0, 0.3); }
 
 .btn-outline {
   background: transparent;
@@ -359,11 +362,12 @@ a.carte:active { transform: translateY(-1px); }
 .loo-hero-note { margin: 0.8rem 0 0; font-size: 0.82rem; opacity: 0.75; }
 .loo-lien-discret { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; opacity: 0.75; text-decoration: underline; text-underline-offset: 3px; }
 .loo-lien-discret:hover { opacity: 1; }
-.loo-temoignages { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.2rem; margin-top: 1.6rem; }
-.loo-temoignage { margin: 0; padding: 1.5rem; position: relative; }
-.loo-temoignage blockquote { margin: 0 0 1.2rem; font-size: 1.05rem; line-height: 1.6; }
-.loo-temoignage figcaption { display: flex; align-items: center; gap: 0.7rem; }
-.loo-temoin-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--loo-papier-ombre); color: var(--loo-rouge); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
 .loo-appel-fournisseur { text-align: center; border-top: 1px dashed var(--loo-papier-ombre); padding-top: 2rem; }
 .loo-appel-fournisseur p { margin: 0 0 0.4rem; opacity: 0.7; }
 .loo-appel-fournisseur a { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--loo-rouge); font-weight: 700; font-size: 1.05rem; }
+
+
+/* Pied de page clair : réseaux de la communauté */
+.pied-reseaux { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0.8rem 0 0; padding: 0; }
+.pied-reseaux a { width: 40px; height: 40px; border-radius: 50%; background: var(--loo-orange-clair); color: var(--loo-rouge); display: inline-flex; align-items: center; justify-content: center; }
+.pied-reseaux a:hover { background: var(--loo-orange); color: #fff; }

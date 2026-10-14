@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MarqueVisage from './MarqueVisage.jsx';
 import SourireDiviseur from './SourireDiviseur.jsx';
 import { URL_ACHETER, URL_DEVENIR_FOURNISSEUR } from '../config.js';
+import { recupererLiensCommunaute } from '../api/fournisseurs.js';
+import { RESEAUX } from './IconesReseaux.jsx';
 
 export default function Footer({ onOuvrirBientotDisponible }) {
+  const [liens, setLiens] = useState({});
+  useEffect(() => { recupererLiensCommunaute().then(setLiens); }, []);
+  const reseaux = RESEAUX.filter((r) => liens[r.cle]);
   return (
     <footer id="partenaire">
-      <SourireDiviseur fond="var(--loo-blanc)" suivant="var(--loo-encre)" />
+      <SourireDiviseur fond="var(--loo-papier)" suivant="var(--loo-blanc)" />
 
       <div style={styles.footer}>
         <div className="container" style={styles.contenu}>
           <div>
             <div style={styles.logoLigne}>
-              <MarqueVisage couleur="var(--loo-papier)" taille={40} />
+              <MarqueVisage couleur="var(--loo-orange)" taille={40} />
               <span style={styles.logoTexte}>LOOHOO</span>
             </div>
             <p style={styles.slogan}>LOOHOO — Le grand marché digital.<br />Le marché qui connecte fournisseurs, vendeurs et clients.</p>
+            {reseaux.length > 0 && (
+              <>
+                <h4 style={{ ...styles.titreColonne, marginTop: '1.2rem' }}>Rejoignez la communauté</h4>
+                <ul className="pied-reseaux">
+                  {reseaux.map(({ cle, nom, Icone }) => (
+                    <li key={cle}><a href={liens[cle]} target="_blank" rel="noreferrer" aria-label={nom} title={nom}><Icone size={20} /></a></li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           <div style={styles.colonne}>
@@ -24,7 +39,7 @@ export default function Footer({ onOuvrirBientotDisponible }) {
             <p style={styles.texte}>
               Trouvez un grossiste ou fabricant vérifié, comparez les prix de gros et demandez un devis.
             </p>
-            <a href={URL_ACHETER} className="btn btn-clair" style={{ marginTop: '0.8rem' }}>Trouver un fournisseur</a>
+            <a href={URL_ACHETER} className="btn btn-primary" style={{ marginTop: '0.8rem' }}>Trouver un fournisseur</a>
           </div>
 
           <div style={styles.colonne}>
@@ -54,7 +69,6 @@ export default function Footer({ onOuvrirBientotDisponible }) {
             <a href="mailto:contact@looh-oo.com" style={styles.lienLegal}>Contact</a>
             <a href="mailto:contact@looh-oo.com?subject=Partenariat%20LOOHOO" style={styles.lienLegal}>Partenariats &amp; collaborations</a>
           </nav>
-          <a href="https://www.agnissanisaac.com/" target="_blank" rel="noreferrer" style={styles.credit}>Créé par Code A-Z</a>
         </div>
       </div>
     </footer>
@@ -62,22 +76,20 @@ export default function Footer({ onOuvrirBientotDisponible }) {
 }
 
 const styles = {
-  footer: { background: 'var(--loo-encre)', paddingTop: '3rem', color: 'var(--loo-papier)' },
+  footer: { background: 'var(--loo-blanc)', paddingTop: '3rem', color: 'var(--loo-encre)', borderTop: '4px solid var(--loo-orange)' },
   contenu: { display: 'flex', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap', paddingBottom: '2rem' },
   logoLigne: { display: 'flex', alignItems: 'center', gap: '0.6rem' },
   logoTexte: { fontFamily: 'var(--police-affiche)', fontWeight: 700, fontSize: '1.25rem' },
   slogan: { opacity: 0.75, marginTop: '0.6rem', maxWidth: '280px' },
   colonne: { maxWidth: '320px' },
-  titreColonne: { fontSize: '0.95rem', marginBottom: '0.6rem', fontWeight: 600, color: 'var(--loo-papier)' },
+  titreColonne: { fontSize: '0.95rem', marginBottom: '0.6rem', fontWeight: 800, color: 'var(--loo-orange)' },
   texte: { opacity: 0.75, fontSize: '0.9rem', margin: 0 },
   copyright: {
-    borderTop: '1px solid rgba(255,248,239,0.15)', padding: '1.2rem 1.5rem',
+    borderTop: '1px solid var(--loo-papier-ombre)', padding: '1.2rem 1.5rem',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap',
-    fontSize: '0.78rem', opacity: 0.6, fontFamily: 'var(--police-etiquette)',
+    fontSize: '0.78rem', opacity: 0.8, fontFamily: 'var(--police-etiquette)',
   },
   liensLegaux: { display: 'flex', gap: '1.2rem', flexWrap: 'wrap' },
-  lienLegal: { color: 'inherit', textDecoration: 'none', borderBottom: '1px solid rgba(255,248,239,0.25)' },
-  credit: {
-    color: 'inherit', opacity: 0.85, textDecoration: 'none', borderBottom: '1px solid rgba(255,248,239,0.35)',
-  },
+  lienLegal: { color: 'inherit', textDecoration: 'none', borderBottom: '1px solid var(--loo-papier-ombre)' },
+
 };

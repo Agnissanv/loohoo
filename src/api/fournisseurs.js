@@ -23,3 +23,11 @@ export async function recupererPaysOuverts() {
   if (error || !Array.isArray(data) || data.length === 0) return null;
   return data;
 }
+
+// Liens « Rejoignez la communauté » réglés par l'équipe (migration 0025 du site fournisseurs). {} si indisponibles.
+export async function recupererLiensCommunaute() {
+  if (!supabase) return {};
+  const { data, error } = await supabase.rpc('liens_communaute');
+  if (error || !data) return {};
+  return data;
+}
