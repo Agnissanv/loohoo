@@ -3,26 +3,24 @@ import { recupererChiffresPublics } from '../api/fournisseurs.js';
 
 const nombre = (n) => Number(n).toLocaleString('fr-FR');
 
-// « LOOHOO aujourd'hui » : chiffres comptés dans la base (fournisseurs vérifiés, produits publiés, pays)
+// « LOOHOO aujourd'hui » : les mêmes chiffres que la plateforme fournisseurs, comptés dans la base (jamais saisis à la main)
 export default function ChiffresLoohoo() {
   const [c, setC] = useState(null);
   useEffect(() => { recupererChiffresPublics().then(setC); }, []);
   if (!c) return null;
   const lignes = [
-    [c.verifies, c.verifies > 1 ? 'Fournisseurs vérifiés' : 'Fournisseur vérifié'],
-    [c.produits, c.produits > 1 ? 'Produits publiés' : 'Produit publié'],
-    [c.pays, c.pays > 1 ? 'Pays couverts' : 'Pays couvert'],
+    [c.verifies, c.verifies > 1 ? 'fournisseurs vérifiés' : 'fournisseur vérifié'],
+    [c.produits, c.produits > 1 ? 'produits publiés' : 'produit publié'],
+    [c.pays, 'pays'],
   ];
   return (
-    <section className="section" style={{ paddingTop: 0, paddingBottom: '2rem' }} aria-label="LOOHOO aujourd'hui">
-      <div className="container">
-        <span className="etiquette">LOOHOO aujourd'hui</span>
-        <div className="loo-chiffres">
-          {lignes.map(([n, l]) => (
-            <div key={l}><strong>{nombre(n)}</strong><span>{l}</span></div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <aside className="chiffres" aria-labelledby="titre-chiffres">
+      <h2 id="titre-chiffres" className="chiffres-titre">LOOHOO aujourd'hui</h2>
+      <dl>
+        {lignes.map(([n, l]) => (
+          <div key={l}><dt>{l}</dt><dd>{nombre(n)}</dd></div>
+        ))}
+      </dl>
+    </aside>
   );
 }

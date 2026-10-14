@@ -5,7 +5,7 @@ const PILIERS = [
   {
     icon: Sparkles,
     titre: 'Un nom, un sens',
-    texte: "LOOHOO vient du Dan (Yacouba), une langue de Côte d'Ivoire — il signifie « commerce, vente, achat ». Une racine culturelle, pas juste un nom de marque.",
+    texte: "LOOHOO signifie « marché » en dan (yacouba), une langue de Côte d'Ivoire. Une racine culturelle, pas juste un nom de marque.",
   },
   {
     icon: IconInfini,
@@ -26,8 +26,8 @@ export default function Mission() {
         <span className="etiquette">Qui est LOOHOO</span>
         <h2 className="section-titre">Une marque, un écosystème.</h2>
         <p className="section-intro">
-          LOOHOO ne vend rien directement — c'est la marque qui réunit fournisseurs, vendeurs et
-          boutiques spécialisées, chacun gardant son indépendance et son savoir-faire.
+          Notre mission : aider les vendeurs à créer, gérer et faire grandir leur commerce dans un écosystème simple et connecté.
+          LOOHOO réunit fournisseurs, vendeurs et clients ; chacun garde son indépendance et son savoir-faire.
         </p>
 
         <div className="loo-mission-grille" style={styles.grille}>

@@ -1,30 +1,26 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import Hero from '../components/Hero.jsx';
-import Parcours from '../components/Parcours.jsx';
+import PortesMarche from '../components/PortesMarche.jsx';
+import MarcheEnDirect from '../components/MarcheEnDirect.jsx';
+import TroisActeurs from '../components/TroisActeurs.jsx';
 import CommentCaMarche from '../components/CommentCaMarche.jsx';
+import PremiersFournisseurs from '../components/PremiersFournisseurs.jsx';
 import Faq from '../components/Faq.jsx';
-import ChiffresLoohoo from '../components/ChiffresLoohoo.jsx';
-import { URL_INSCRIPTION_FOURNISSEUR } from '../config.js';
 
-// Page mère de la marque, dans l'ordre de la maquette validée par le client :
-// hero, que venez-vous faire, comment ça marche, questions, LOOHOO aujourd'hui, appel aux fournisseurs.
-// Pas de témoignages tant que la plateforme n'a pas de vrais utilisateurs (demande du client, 13 oct 2026).
-// L'histoire de la marque, les services et les boutiques sont sur la page « À propos ».
-export default function Accueil({ onOuvrirBientotDisponible }) {
+// Le site officiel est le hall du marché : il oriente chacun vers sa porte (pas de catalogue, pas de recherche).
+// Ordre demandé par le client (13 oct 2026) : haut de page, portes, marché en direct, trois acteurs, trois parcours,
+// premiers fournisseurs vérifiés, questions fréquentes et chiffres. « Rejoignez la communauté » et le pied de page sont communs à toutes les pages.
+// Pas de témoignages tant que la plateforme n'a pas de vrais utilisateurs.
+export default function Accueil() {
   return (
     <>
       <Hero />
-      <Parcours onOuvrirBientotDisponible={onOuvrirBientotDisponible} />
+      <PortesMarche />
+      <MarcheEnDirect />
+      <TroisActeurs />
       <CommentCaMarche />
+      <PremiersFournisseurs />
       <Faq />
-      <ChiffresLoohoo />
-      <section className="section" style={{ paddingTop: '1rem' }}>
-        <div className="container loo-appel-fournisseur">
-          <p>Vous avez du stock à vendre en gros ?</p>
-          <a href={URL_INSCRIPTION_FOURNISSEUR}>Créer votre profil fournisseur LOOHOO <ArrowRight size={16} /></a>
-        </div>
-      </section>
     </>
   );
 }

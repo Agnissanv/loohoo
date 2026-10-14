@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import BlocCommunaute from './components/BlocCommunaute.jsx';
 import ModaleBientotDisponible from './components/ModaleBientotDisponible.jsx';
 import Accueil from './pages/Accueil.jsx';
 import MentionsLegales from './pages/MentionsLegales.jsx';
@@ -55,7 +56,7 @@ export default function App() {
 
       <div key={pathname} className="loo-page">
       <Routes>
-        <Route path="/" element={<Accueil onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
+        <Route path="/" element={<Accueil />} />
         <Route path="/a-propos" element={<APropos onOuvrirBientotDisponible={() => setModaleOuverte(true)} />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
@@ -64,7 +65,8 @@ export default function App() {
       </Routes>
       </div>
 
-      <Footer onOuvrirBientotDisponible={() => setModaleOuverte(true)} />
+      <BlocCommunaute />
+      <Footer />
 
       {/* La fenêtre est à la racine, jamais dans le header (sinon elle reste coincée dans son empilement CSS) */}
       {modaleOuverte && (
